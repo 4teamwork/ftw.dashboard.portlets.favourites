@@ -1,0 +1,39 @@
+<dl class="portlet favourite"
+    i18n:domain="ftw.dashboard.portlets.favourites">
+
+    <dt class="portletHeader clearfix">
+	  <span class="portletTopLeft"></span>
+      	<span class="title"
+          i18n:translate="box_favourites">Favourites</span>
+      <span class="portletTopRight"></span>
+    
+    </dt>
+
+    <tal:items tal:define="plone_view context/@@plone;"
+               tal:repeat="item view/items">
+
+        <dd class="portletItem" 
+            tal:define="oddrow repeat/item/odd;"
+            tal:attributes="class python:oddrow and  'portletItem even' or 'portletItem odd';
+                            id string:${item/id}">
+            <span class="title">
+                <a href=""
+                   tal:attributes="href python: item.getRemoteUrl.replace('resolveUid', 'resolveuid');
+                                   title item/Title;">
+                    <tal:title content="item/Title">
+                        Title
+                    </tal:title>
+                </a>
+            </span>
+        </dd>
+    </tal:items>
+
+    <dd class="portletItemEmpty portletItem" tal:attributes="style python:view.items() and 'display:none' or 'display:block'">
+        
+        <span class="noEntries" i18n:translate="box_no_fav_items">
+            No items.
+        </span>
+    </dd>
+
+</dl>
+

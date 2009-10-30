@@ -3,7 +3,7 @@ jq(function(){
         if(!jq('#regio-content').hasClass('documentEditable')){
             jq(this).children('.portletItem').each(function(){
                 if(!jq(this).hasClass('portletItemEmpty')){
-                    jq(this).append('<a class="close favouriteRemove" title="entfernen"><img alt="Widget entfernen" src = "++resource++icon_remove_box.gif"/></a>')
+                    jq(this).append('<a class="close favouriteRemove" title="entfernen"><img alt="remove" src = "'+portal_url+'/++resource++icon_remove_box.gif"/></a>')
                 }
             });
         }

@@ -8,12 +8,19 @@ How to use ftw.dashboard.portlets.favourites
 
 1.) Install the ftw.dashboard.portlets.favourites product with the portal_setup tool
 
-2.) On every page you can see now the site action "add to Favourites" wich add the current section to your Favourite Folder. 
+2.) On every page you can see now the site action "add to Favourites" wich add the current section to your Favourite Folder (see section Member Folder). 
 
 3.) Add a Favourite Portlet to your dashboard 
 
 4.) enjoy your favourites
 
+
+Member Folder
+-------------
+Your Favourites would be saved in the home folder or member folder. Therefore you have eventuelly change your Plone settings:
+    Go Site Setup --> Security --> check "Enable User Folders"
+
+Attention when you use a zope User, default they haven't a Use Folder, and you can't add any Favourites.
 
 Description:
 ============

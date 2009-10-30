@@ -5,7 +5,7 @@ version = '1.0'
 
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,
-      description="",
+      description="A Favourite Portlet, wich show your favourites on your dashboard",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
@@ -25,7 +25,7 @@ setup(name='ftw.dashboard.portlets.favourites',
       install_requires=[
           'setuptools',
 		  'collective.js.jqueryui==1.7.2.5',
-          # -*- Extra requirements: -*-
+          # -*- Extra requirements: -*- 
       ],
       entry_points="""
       # -*- Entry points: -*-

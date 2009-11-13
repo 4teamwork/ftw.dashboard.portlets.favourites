@@ -18,7 +18,13 @@ if not homeFolder:
     context.plone_utils.addPortalMessage(_(u'Can\'t access home folder. favourite is not added.'), 'error')
     return RESPONSE.redirect(view_url)
 
-if not base_hasattr(homeFolder, 'favourites'):
+targetFolder = None
+for fav_folder_name in ['favourites', 'Favourites', 'Favorites', 'favorites']:
+    if hasattr(homeFolder, fav_folder_name):
+        targetFolder =getattr(homeFolder, fav_folder_name, None)
+	break
+
+if not targetFolder:
     homeFolder.invokeFactory('Folder', id='favourites', title='favourites')
     addable_types = ['Favorite']
     favs = homeFolder.favourites
@@ -28,7 +34,6 @@ if not base_hasattr(homeFolder, 'favourites'):
         favs.setLocallyAllowedTypes(addable_types)
         favs.manage_addProperty('layout','fav_folder_view',type='string')
 
-targetFolder = homeFolder.favourites
 new_id='fav_' + str(int( context.ZopeTime()))
 fav_id = targetFolder.invokeFactory('Favorite', id=new_id, title=context.TitleOrId(), remote_url='resolveUid/%s' % context.UID())
 favourite = getattr(targetFolder, fav_id, None)

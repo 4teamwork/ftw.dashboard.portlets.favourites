@@ -13,6 +13,7 @@ from plone.app.portlets.cache import render_cachekey
 from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from ftw.dashboard.portlets.favourites import _
+from ftw.dashboard.portlets.favourites.fav_folder import get_fav_folder
 from ftw_formhelper import ftwAddForm, ftwEditForm
 
 class IFavouritePortlet(IPortletDataProvider):
@@ -57,8 +58,10 @@ class Renderer(base.Renderer):
             return []
         
         count = getattr(self.data,'count',10)
-        if hasattr(homeFolder,'favourites'):
-            return homeFolder.favourites.getFolderContents()[:count]
+	favFolder = get_fav_folder(self.context)
+        if favFolder:
+            return favFolder.getFolderContents()[:count]
+
         return []
 
 

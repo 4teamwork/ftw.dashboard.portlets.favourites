@@ -1,0 +1,73 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# Luciano Pacheco<lucmult@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-10-26 16:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Luciano Pacheco <lucmult@gmail.com>\n"
+"Language-Team: Simples Consultoria <products@simplesconsultoria.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: pt-br\n"
+"Language-Name: Brazilian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ftw.dashboard.portlets.favourites\n"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:38
+msgid "${title} has been added to your favourites."
+msgstr "${title} foi adicionado aos seus favoritos."
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:67
+msgid "Add Favorite Portlet"
+msgstr "Adicionar Portlet de Favoritos"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:18
+msgid "Can't access home folder. favourite is not added."
+msgstr "NÃo foi possÃvel acessar a pasta pessoal. Favorito nÃo foi adicionado."
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:75
+msgid "Edit Favorite Portlet"
+msgstr "Editar Portlet de Favorito"
+
+#. Default: "Favourites"
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:32
+msgid "Favourites"
+msgstr "Favoritos"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:20
+msgid "How many items to list."
+msgstr "Quanto itens devem ser exibidos."
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:19
+msgid "Number of items to display"
+msgstr "NÃmero de itens para exibiÃÃo"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:9
+msgid "Portlet added to dashboard"
+msgstr "Portlet adicionado ao dashboard"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:24
+msgid "Portlet edited"
+msgstr "Portlet editado"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:42
+msgid "There was a problem adding ${title} to your favourites."
+msgstr "Ocorreu um erro ao adicionar ${title} aos seus favoritos."
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:68
+msgid "This portlet displays your Favorites"
+msgstr "Esse portlet exibe os seus favoritos"
+
+#. Default: "Favourites"
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:6
+msgid "box_favourites"
+msgstr "Favoritos"
+
+#. Default: "No items."
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:33
+msgid "box_no_fav_items"
+msgstr "Sem itens."
+

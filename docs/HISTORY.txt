@@ -5,6 +5,10 @@ Changelog
 1.1
 ---
 
+* Added Brazilian Portuguese translation [lucmult]
+* Improve management of Favorites folder, can be in this names: favourites,
+  favorites, Favourites, Favourites, to integrate better with default Plone
+  action [lucmult]
 
 1.0
 ---

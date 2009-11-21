@@ -27,12 +27,12 @@ for fav_folder_name in ['favourites', 'Favourites', 'Favorites', 'favorites']:
 if not targetFolder:
     homeFolder.invokeFactory('Folder', id='favourites', title='favourites')
     addable_types = ['Favorite']
-    favs = homeFolder.favourites
-    if base_hasattr(favs, 'setConstrainTypesMode'):
-        favs.setConstrainTypesMode(1)
-        favs.setImmediatelyAddableTypes(addable_types)
-        favs.setLocallyAllowedTypes(addable_types)
-        favs.manage_addProperty('layout','fav_folder_view',type='string')
+    targetFolder = homeFolder.favourites
+    if base_hasattr(targetFolder, 'setConstrainTypesMode'):
+        targetFolder.setConstrainTypesMode(1)
+        targetFolder.setImmediatelyAddableTypes(addable_types)
+        targetFolder.setLocallyAllowedTypes(addable_types)
+        targetFolder.manage_addProperty('layout','fav_folder_view',type='string')
 
 new_id='fav_' + str(int( context.ZopeTime()))
 fav_id = targetFolder.invokeFactory('Favorite', id=new_id, title=context.TitleOrId(), remote_url='resolveUid/%s' % context.UID())

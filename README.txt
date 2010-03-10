@@ -1,7 +1,6 @@
 Introduction
 ============
-
-The ftw.dashboard.portlets.favourites paket, implements a Favourite Portlet as well as the site action "addToFavourites",wich add the current page to your favourites
+The ftw.dashboard.portlets.favourites paket, implements a Favourite Portlet wich list the favorites.
 
 How to use ftw.dashboard.portlets.favourites
 ============================================
@@ -13,14 +12,6 @@ How to use ftw.dashboard.portlets.favourites
 3.) Add a Favourite Portlet to your dashboard 
 
 4.) enjoy your favourites
-
-
-Member Folder
--------------
-Your Favourites would be saved in the home folder or member folder. Therefore you have eventuelly change your Plone settings:
-    Go Site Setup --> Security --> check "Enable User Folders"
-
-Attention when you use a zope User, default they haven't a Use Folder, and you can't add any Favourites.
 
 Description:
 ============

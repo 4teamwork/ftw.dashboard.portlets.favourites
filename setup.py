@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.1'
+version = open("ftw/dashboard/portlets/favourites/version.txt").read().strip()
 
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,

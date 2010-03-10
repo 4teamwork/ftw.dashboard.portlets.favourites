@@ -5,6 +5,9 @@ Changelog
 1.1
 ---
 
+* removed the addToFavourites script. Now Using the standard Plone Favorites, and their script.
+  [phgross, 10.03.2010]
+
 * Added Brazilian Portuguese translation [lucmult]
 * Improve management of Favorites folder, can be in this names: favourites,
   favorites, Favourites, Favourites, to integrate better with default Plone

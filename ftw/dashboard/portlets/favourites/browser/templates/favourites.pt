@@ -1,5 +1,6 @@
 <dl class="portlet favourite"
-    i18n:domain="ftw.dashboard.portlets.favourites">
+    i18n:domain="ftw.dashboard.portlets.favourites"
+    tal:define="items view/items">
 
     <dt class="portletHeader clearfix">
 	  <span class="portletTopLeft"></span>
@@ -9,8 +10,7 @@
     
     </dt>
 
-    <tal:items tal:define="plone_view context/@@plone;"
-               tal:repeat="item view/items">
+    <tal:items tal:repeat="item items">
 
         <dd class="portletItem" 
             tal:define="oddrow repeat/item/odd;"
@@ -28,7 +28,8 @@
         </dd>
     </tal:items>
 
-    <dd class="portletItemEmpty portletItem" tal:attributes="style python:view.items() and 'display:none' or 'display:block'">
+    <dd class="portletItemEmpty portletItem" 
+        tal:condition="not:items">
         
         <span class="noEntries" i18n:translate="box_no_fav_items">
             No items.

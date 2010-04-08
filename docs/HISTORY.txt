@@ -4,7 +4,8 @@ Changelog
 
 1.2
 ---
-
+* removed inline css on portlet 
+  [fsprenger, 8.04.2010]
 
 1.1
 ---

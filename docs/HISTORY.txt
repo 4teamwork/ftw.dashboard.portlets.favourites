@@ -7,6 +7,9 @@ Changelog
 * removed inline css on portlet 
   [fsprenger, 8.04.2010]
 
+* added new, removed unused translations
+  [phgross, 13.04.2010]
+
 1.1
 ---
 

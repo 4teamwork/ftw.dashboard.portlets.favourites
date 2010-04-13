@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-10-26 16:54+0000\n"
+"POT-Creation-Date: 2010-04-13 12:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,27 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ftw.dashboard.portlets.favourites\n"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:38
-msgid "${title} has been added to your favourites."
-msgstr ""
-
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:67
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:70
 msgid "Add Favorite Portlet"
 msgstr ""
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:18
-msgid "Can't access home folder. favourite is not added."
+msgid "Add to favorites"
 msgstr ""
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:75
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:78
 msgid "Edit Favorite Portlet"
 msgstr ""
 
 #. Default: "Favourites"
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:32
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:33
 msgid "Favourites"
 msgstr ""
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:20
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:21
 msgid "How many items to list."
 msgstr ""
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:19
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:20
 msgid "Number of items to display"
 msgstr ""
 
@@ -54,21 +49,17 @@ msgstr ""
 msgid "Portlet edited"
 msgstr ""
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:42
-msgid "There was a problem adding ${title} to your favourites."
-msgstr ""
-
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:68
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:71
 msgid "This portlet displays your Favorites"
 msgstr ""
 
 #. Default: "Favourites"
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:6
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:7
 msgid "box_favourites"
 msgstr ""
 
 #. Default: "No items."
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:33
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:34
 msgid "box_no_fav_items"
 msgstr ""
 

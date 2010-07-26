@@ -4,6 +4,9 @@ Changelog
 
 1.2
 ---
+* added the addToFavorites script (use now links and no more the depracted favorite type), and to some other changes for plone4 support
+  [phgross, 26.07.2010]
+
 * removed inline css on portlet 
   [fsprenger, 8.04.2010]
 

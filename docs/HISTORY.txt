@@ -4,6 +4,10 @@ Changelog
 
 1.2
 ---
+
+* fixed namespaces in setup.py
+  [phgross, 29.07.2010]
+
 * added the addToFavorites script (use now links and no more the depracted favorite type), and to some other changes for plone4 support
   [phgross, 26.07.2010]
 

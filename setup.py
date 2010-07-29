@@ -19,7 +19,7 @@ setup(name='ftw.dashboard.portlets.favourites',
       url='http://plone.org/products/ftw.dashboard.portlets.favourites/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['ftw'],
+      namespace_packages=['ftw', 'ftw.dashboard', 'ftw.dashboard.portlets'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[

@@ -1,5 +1,5 @@
-# created by: svn propset svn:ignore -F ./IGNORE.TXT .
+# created by: # created by: svn propset svn:ignore -F ./IGNORE.txt .
 
-ftw.dashboard.portlets.favourites.egg-info
+ftw.dashboard.portlets.postit.egg-info
 build
 dist

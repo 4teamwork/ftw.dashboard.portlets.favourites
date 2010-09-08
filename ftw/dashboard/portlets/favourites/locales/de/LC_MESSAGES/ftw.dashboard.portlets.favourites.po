@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-26 09:28+0000\n"
+"POT-Creation-Date: 2010-08-10 08:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,20 +12,12 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addToFavorites.py:41
-msgid "${title} has been added to your Favorites."
-msgstr "${title} wurde zu Ihren Favoriten hinzugefügt"
-
 #: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:70
 msgid "Add Favorite Portlet"
 msgstr "Favoriten Portlet hinzugefügt"
 
 msgid "Add to favorites"
 msgstr "Zu den Favoriten hinzufügen"
-
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addToFavorites.py:18
-msgid "Can't access home folder. Favorite is not added."
-msgstr "Es konnte nicht auf ihren persönlichen Ordner zugegriffen werden. Der Favorit wurde nicht hinzugefügt"
 
 #: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:78
 msgid "Edit Favorite Portlet"
@@ -51,10 +43,6 @@ msgstr "Portlet wurde zum Dashboard hinzugefügt"
 #: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:24
 msgid "Portlet edited"
 msgstr "Portlet wurde bearbeitet"
-
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addToFavorites.py:45
-msgid "There was a problem adding ${title} to your Favorites."
-msgstr "Es gab ein Problem beim hinzufügen von ${title} zu Ihren Favoriten"
 
 #: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:71
 msgid "This portlet displays your Favorites"

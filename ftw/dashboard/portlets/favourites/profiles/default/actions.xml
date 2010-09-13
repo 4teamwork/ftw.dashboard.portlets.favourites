@@ -7,7 +7,7 @@
  <object name="document_actions" meta_type="CMF Action Category">
   <object name="addtofavorites" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Add to favorites</property>
-   <property name="description" i18n:translate="">Zu Favoriten hinzufügen</property>
+   <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object_url}/addToFavorites</property>
    <property name="icon_expr"> string:${object/portal_url}/++resource++ftw.dashboard.portlets.favourites.resources/icon_funktion_favoriten_negativ.gif</property>
    <property

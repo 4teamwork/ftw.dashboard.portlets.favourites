@@ -24,8 +24,6 @@ setup(name='ftw.dashboard.portlets.favourites',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'collective.js.jqueryui',
-          # -*- Extra requirements: -*- 
       ],
       entry_points="""
       # -*- Entry points: -*-

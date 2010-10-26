@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-1.2
+2.0
 ---
+* Only plone4 compatible
 
 * fixed namespaces in setup.py
   [phgross, 29.07.2010]

@@ -1,11 +1,12 @@
-from setuptools import setup, find_packages
 import os
+from setuptools import setup, find_packages
 
-version = open("ftw/dashboard/portlets/favourites/version.txt").read().strip()
 
+version = '2.1dev'
+mainainter = 'Philipp Gross'
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,
-      description="A Favourite Portlet, wich show your favourites on your dashboard",
+      description="A favourite Portlet, which shows your favourites on the dashboard",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
@@ -14,10 +15,10 @@ setup(name='ftw.dashboard.portlets.favourites',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='',
-      author='philippegross',
+      author='4teamwork GmbH',
       author_email='mailto:info@4teamwork.ch',
       url='http://plone.org/products/ftw.dashboard.portlets.favourites/',
-      license='GPL',
+      license='GPL2',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['ftw', 'ftw.dashboard', 'ftw.dashboard.portlets'],
       include_package_data=True,
@@ -27,5 +28,7 @@ setup(name='ftw.dashboard.portlets.favourites',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )

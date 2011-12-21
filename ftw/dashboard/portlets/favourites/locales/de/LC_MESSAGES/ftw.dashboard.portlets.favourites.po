@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-10 08:08+0000\n"
+"POT-Creation-Date: 2011-12-21 14:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,49 +12,49 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:70
+#: ./ftw/dashboard/portlets/favourites/browser/favourites.py:70
 msgid "Add Favorite Portlet"
 msgstr "Favoriten Portlet hinzugefügt"
 
 msgid "Add to favorites"
 msgstr "Zu den Favoriten hinzufügen"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:78
+#: ./ftw/dashboard/portlets/favourites/browser/favourites.py:78
 msgid "Edit Favorite Portlet"
 msgstr "Favorite Portlet bearbeiten"
 
 #. Default: "Favourites"
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:33
+#: ./ftw/dashboard/portlets/favourites/browser/favourites.py:33
 msgid "Favourites"
 msgstr "Favoriten"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:21
+#: ./ftw/dashboard/portlets/favourites/browser/favourites.py:21
 msgid "How many items to list."
 msgstr "Wie viele sollen angzeigt werden:"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:20
+#: ./ftw/dashboard/portlets/favourites/browser/favourites.py:20
 msgid "Number of items to display"
 msgstr "Anzahl anzuzeigende Artikel"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:9
+#: ./ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:9
 msgid "Portlet added to dashboard"
 msgstr "Portlet wurde zum Dashboard hinzugefügt"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:24
+#: ./ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:24
 msgid "Portlet edited"
 msgstr "Portlet wurde bearbeitet"
 
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/favourites.py:71
+#: ./ftw/dashboard/portlets/favourites/browser/favourites.py:71
 msgid "This portlet displays your Favorites"
 msgstr "Dieses portlet zeigt ihre Favoriten an"
 
 #. Default: "Favourites"
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:7
+#: ./ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:7
 msgid "box_favourites"
 msgstr "Favoriten"
 
 #. Default: "No items."
-#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:34
+#: ./ftw/dashboard/portlets/favourites/browser/templates/favourites.pt:34
 msgid "box_no_fav_items"
 msgstr "Keine Favoriten"
 

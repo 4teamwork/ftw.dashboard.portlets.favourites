@@ -20,5 +20,10 @@ msgstr ""
 msgid "Add to favorites"
 msgstr ""
 
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:42
+msgid "There was a problem adding ${title} to your favourites."
+msgstr ""
 
-
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:38
+msgid "${title} has been added to your favourites."
+msgstr ""

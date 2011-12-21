@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-12-21 14:01+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2011-12-21 14:02+0000\n"
+"PO-Revision-Date: 2011-12-21 15:05+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,6 +11,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:38
+msgid "${title} has been added to your favourites."
+msgstr "${title} wurde ihren Favoriten hinzugefügt."
 
 #: ./ftw/dashboard/portlets/favourites/browser/favourites.py:70
 msgid "Add Favorite Portlet"
@@ -43,6 +47,10 @@ msgstr "Portlet wurde zum Dashboard hinzugefügt"
 #: ./ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:24
 msgid "Portlet edited"
 msgstr "Portlet wurde bearbeitet"
+
+#: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:42
+msgid "There was a problem adding ${title} to your favourites."
+msgstr "Das hinzufügen von ${title} ist fehlgeschlagen."
 
 #: ./ftw/dashboard/portlets/favourites/browser/favourites.py:71
 msgid "This portlet displays your Favorites"

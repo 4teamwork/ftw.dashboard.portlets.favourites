@@ -37,13 +37,14 @@ else:
 
 if favorite:
     favorite.reindexObject()
-    msg = context.translate(u'${title} has been added to your Favorites.', 
+    msg = context.translate(u'${title} has been added to your favourites.',
                             mapping={u'title' : context.title_or_id()},
                             domain="ftw.dashboard.portlets.favourites",)
     context.plone_utils.addPortalMessage(msg)
 else:
-    msg = context.translate(u'There was a problem adding ${title} to your Favorites.',
+    msg = context.translate(u'There was a problem adding ${title} to your favourites.',
                             mapping={u'title' : context.title_or_id()},
                             domain="ftw.dashboard.portlets.favourites",)
+    context.plone_utils.addPortalMessage(msg, type='error')
 
 return RESPONSE.redirect(view_url)

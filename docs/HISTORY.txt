@@ -5,6 +5,9 @@ Changelog
 2.1 (unreleased)
 ----------------
 
+- Fix messages in "add to favourites" script, so that translations work.
+  [jone]
+
 - Added some missing german translations.
   [jone]
 

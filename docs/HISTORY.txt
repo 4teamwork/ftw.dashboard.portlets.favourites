@@ -5,6 +5,9 @@ Changelog
 2.1 (unreleased)
 ----------------
 
+- Translate portlet title in "plone" domain.
+  [jone]
+
 - Fix messages in "add to favourites" script, so that translations work.
   [jone]
 

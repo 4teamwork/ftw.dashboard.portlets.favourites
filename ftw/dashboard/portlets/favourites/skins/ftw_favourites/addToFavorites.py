@@ -35,15 +35,22 @@ if fav_id:
 else:
     favorite = getattr(targetFolder, new_id, None)
 
+title = context.Title() or context.id
+
+if isinstance(title, unicode):
+    # The title is usually encoded in utf8, but in some dexterity
+    # versions it may be unicode in certain circumstances.
+    title = title.encode('utf-8')
+
 if favorite:
     favorite.reindexObject()
     msg = context.translate(u'${title} has been added to your favourites.',
-                            mapping={u'title' : context.title_or_id()},
+                            mapping={u'title' : title},
                             domain="ftw.dashboard.portlets.favourites",)
     context.plone_utils.addPortalMessage(msg)
 else:
     msg = context.translate(u'There was a problem adding ${title} to your favourites.',
-                            mapping={u'title' : context.title_or_id()},
+                            mapping={u'title' : title},
                             domain="ftw.dashboard.portlets.favourites",)
     context.plone_utils.addPortalMessage(msg, type='error')
 

@@ -5,6 +5,9 @@ Changelog
 2.1 (unreleased)
 ----------------
 
+- Add to favourites: do not use title_or_id for dexterity support.
+  [jone]
+
 - Translate portlet title in "plone" domain.
   [jone]
 

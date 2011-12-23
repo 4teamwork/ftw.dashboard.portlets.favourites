@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2009-10-26 16:54+0000\n"
-"PO-Revision-Date: 2011-12-21 16:30+0100\n"
+"PO-Revision-Date: 2011-12-23 10:42+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,13 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "Add to favorites"
+msgstr "Zu den Favoriten hinzufügen"
+
 msgid "Favourites portlet"
 msgstr "Favoriten Portlet"
+
+msgid "My favorites"
+msgstr "Meine Favoriten"
 
 

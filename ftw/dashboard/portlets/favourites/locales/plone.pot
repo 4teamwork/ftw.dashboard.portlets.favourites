@@ -19,3 +19,9 @@ msgstr ""
 
 msgid "Favourites portlet"
 msgstr ""
+
+msgid "Add to favorites"
+msgstr ""
+
+msgid "My favorites"
+msgstr ""

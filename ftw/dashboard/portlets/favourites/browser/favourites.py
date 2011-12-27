@@ -1,12 +1,13 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from ftw.dashboard.portlets.favourites import _
-from ftw.dashboard.portlets.favourites.fav_folder import get_fav_folder
+from ftw.dashboard.portlets.favourites.interfaces import IFavouritesLocation
 from ftw_formhelper import ftwAddForm, ftwEditForm
 from plone.app.portlets.cache import render_cachekey
 from plone.app.portlets.portlets import base
 from plone.memoize.compress import xhtml_compress
 from plone.portlets.interfaces import IPortletDataProvider
 from zope import schema
+from zope.component import getMultiAdapter
 from zope.formlib import form
 from zope.interface import implements
 
@@ -50,16 +51,16 @@ class Renderer(base.Renderer):
         return xhtml_compress(self._template())
 
     def _data(self):
-        homeFolder = self.context.portal_membership.getHomeFolder()
-        if homeFolder is None:
+        location = getMultiAdapter((self.context, self.request),
+                                   IFavouritesLocation)
+
+        folder = location.get_favorites_folder()
+        if folder is None:
             return []
 
         count = getattr(self.data, 'count', 10)
-        favFolder = get_fav_folder(self.context)
-        if favFolder:
-            return favFolder.getFolderContents()[:count]
-
-        return []
+        query = location.get_favourites_filter_query()
+        return folder.getFolderContents(contentFilter=query)[:count]
 
 
 class AddForm(ftwAddForm):

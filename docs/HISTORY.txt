@@ -5,6 +5,9 @@ Changelog
 2.1 (unreleased)
 ----------------
 
+- Add IFavouritesLocation adapter for customizing favourites location.
+  [jone]
+
 - Add missing german translations.
   [jone]
 

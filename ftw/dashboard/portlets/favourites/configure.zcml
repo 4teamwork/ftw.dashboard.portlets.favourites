@@ -15,6 +15,8 @@
     <cmf:registerDirectory
        name="ftw_favourites"/>
 
+    <adapter factory=".fav_folder.DefaultFavouritesLocation" />
+
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
       name="default"

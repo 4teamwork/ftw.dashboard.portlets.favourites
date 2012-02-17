@@ -5,6 +5,9 @@ Changelog
 2.1 (unreleased)
 ----------------
 
+- Added some French translations
+  [ttschanz]
+
 - Add IFavouritesLocation adapter for customizing favourites location.
   [jone]
 

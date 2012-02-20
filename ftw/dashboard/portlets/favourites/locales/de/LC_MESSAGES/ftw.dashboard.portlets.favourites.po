@@ -50,7 +50,7 @@ msgstr "Portlet wurde bearbeitet"
 
 #: ftw.dashboard.portlets.favourites/ftw/dashboard/portlets/favourites/skins/ftw_favourites/addtofavourites.py:42
 msgid "There was a problem adding ${title} to your favourites."
-msgstr "Das hinzufügen von ${title} ist fehlgeschlagen."
+msgstr "Das Hinzufügen von ${title} ist fehlgeschlagen."
 
 #: ./ftw/dashboard/portlets/favourites/browser/favourites.py:71
 msgid "This portlet displays your Favorites"

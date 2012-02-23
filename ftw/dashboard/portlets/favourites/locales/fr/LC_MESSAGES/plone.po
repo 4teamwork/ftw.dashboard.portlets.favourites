@@ -16,8 +16,9 @@ msgid "Add to favorites"
 msgstr "Marquer comme favori"
 
 msgid "Favourites portlet"
-msgstr "Portlet favoris"
+msgstr "Outil favoris"
 
 msgid "My favorites"
 msgstr "Mes favoris"
+
 

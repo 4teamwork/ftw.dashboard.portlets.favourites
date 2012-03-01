@@ -18,7 +18,7 @@ msgstr "${title} a été ajouté comme favori"
 
 #: ./ftw/dashboard/portlets/favourites/browser/favourites.py:70
 msgid "Add Favorite Portlet"
-msgstr "l'outil favoris ajouté"
+msgstr "L'outil favoris ajouté"
 
 msgid "Add to favorites"
 msgstr "Marquer comme favori"
@@ -42,7 +42,7 @@ msgstr "Nombre d'éléments à afficher"
 
 #: ./ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:9
 msgid "Portlet added to dashboard"
-msgstr "Outil ajouté au portail"
+msgstr "Outil ajouté à la page d'accueil"
 
 #: ./ftw/dashboard/portlets/favourites/browser/ftw_formhelper.py:24
 msgid "Portlet edited"

@@ -9,7 +9,7 @@ the site action "add to favorites", which add a current section to your favorite
 
 
 Install
-======
+=======
 
 - Add ``ftw.dashboard.portlets.favourites`` to your buildout configuration
 

@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-2.1 (unreleased)
-----------------
+2.0.1 (2012-03-05)
+------------------
 
 - Added some French translations
   [ttschanz]

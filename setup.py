@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 
-version = '2.1dev'
+version = '2.0.1'
 mainainter = 'Philipp Gross'
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,

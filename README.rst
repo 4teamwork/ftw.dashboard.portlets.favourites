@@ -30,8 +30,12 @@ Links
 - Package repository: https://github.com/4teamwork/ftw.dashboard.portlets.favourites
 - Issue tracker: https://github.com/4teamwork/ftw.dashboard.portlets.favourites/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.dashboard.portlets.favourites
+- Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.dashboard.portlets.favourites
 
-Maintainer
-==========
 
-This package is produced and maintained by `4teamwork GmbH <http://www.4teamwork.ch/>`_.
+Copyright
+=========
+
+This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
+
+``ftw.dashboard.portlets.favourites`` is licensed under GNU General Public License, version 2.

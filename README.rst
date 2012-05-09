@@ -30,7 +30,6 @@ Links
 - Package repository: https://github.com/4teamwork/ftw.dashboard.portlets.favourites
 - Issue tracker: https://github.com/4teamwork/ftw.dashboard.portlets.favourites/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.dashboard.portlets.favourites
-- Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.dashboard.portlets.favourites
 
 
 Copyright

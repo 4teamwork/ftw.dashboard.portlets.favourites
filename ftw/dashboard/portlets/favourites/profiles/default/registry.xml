@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<registry>
+    <record name="ftw.dashboard.portlets.favourites.foldername">
+        <field type="plone.registry.field.Text">
+            <title>Foldername</title>
+            <description>Define the name of the favourites-folder</description>
+            <value_type type="plone.registry.field.ASCIILine" />
+        </field>
+        <value>favourites</value>
+    </record>
+</registry>

@@ -1,22 +1,43 @@
 from zope.interface import Interface
 
 
-class IFavouritesLocation(Interface):
-    """The IFavouritesLocation adapter provides information about where the
-    favorites are stored.
+class IFavouritesHandler(Interface):
+    """The IFavouritesHandler adapter provides functionality to create
+    favourites folder and add or remove
     """
 
-    def get_favorites_folder(self):
-        """ Returns the the favorite folder
-        trying get this names frm user home folder:
-        favourites, favorites, Favorites and Favourites
-        WARNING: the same implementation is in:
-        skins/ftw*/addtofavourites.py
+    def create_favourites_folder(self):
+        """ Create the favourites folder
+        """
+
+    def add_favourite(self, fav_id, title, remote_url):
+        """ Add favourite to the favourites folder
+        """
+
+    def remove_favourite(self, fav_id):
+        """ Remove favourite from th favourites folder
+        """
+
+    def order_favourites(self, fav_ids=[]):
+        """ Reorder the favourites in the given order of fav_ids
+        """
+
+    def get_favourites_folder(self):
+        """ Returns the folder the favourites are stored in
+        """
+
+    def get_favourites(self):
+        """Return all favourites
         """
 
     def get_favourites_filter_query(self):
-        """Returns a catalog query for filtering objects in favorites
-        folder when listing them in the portlet.
-        The query is empty by default since we expect only favorites in the
-        favourites folder.
+        """Returns a catalog query to get favourites
+        """
+
+    def get_favourite_folder_name(self):
+        """ Return the foldername where we want to store favourites
+        """
+
+    def get_home_folder(self):
+        """ Return the homefolder of the logged-in user.
         """

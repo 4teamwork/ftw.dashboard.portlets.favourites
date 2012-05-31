@@ -1,21 +1,23 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
     i18n_domain="ftw.dashboard.portlets.favourites">
 
-    <include package="plone.app.portlets" />
-    <include package=".browser" />
+    <five:registerPackage package="." initialize=".initialize" />
 
-    <!-- Register locales translations -->
+    <include package=".browser" />
+    <include package=".portlets" />
+
     <i18n:registerTranslations directory="locales" />
 
-    <cmf:registerDirectory
-       name="ftw_favourites"/>
-
-    <adapter factory=".fav_folder.DefaultFavouritesLocation" />
+    <adapter
+      for="* *"
+      factory=".adapter.DefaultFavouritesHandler"
+      provides=".interfaces.IFavouritesHandler"
+     />
 
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
@@ -25,4 +27,5 @@
       description="ftw dashboard portlets favourites"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
 </configure>

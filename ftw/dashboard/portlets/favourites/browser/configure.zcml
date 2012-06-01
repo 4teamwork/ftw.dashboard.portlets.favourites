@@ -13,7 +13,7 @@
         for="*"
         name="reorder_favourites"
         class=".favourite.ReorderFavourites"
-        permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
         />
 
     <browser:page

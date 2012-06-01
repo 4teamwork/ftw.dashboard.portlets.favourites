@@ -4,6 +4,9 @@ from setuptools import setup, find_packages
 
 version = '2.0.2.dev0'
 mainainter = 'Philipp Gross'
+tests_require = [
+    'plone.app.testing',
+]
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,
       description="A favourite Portlet, which shows your favourites on the dashboard",
@@ -30,6 +33,8 @@ setup(name='ftw.dashboard.portlets.favourites',
       namespace_packages=['ftw', 'ftw.dashboard', 'ftw.dashboard.portlets'],
       include_package_data=True,
       zip_safe=False,
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
       install_requires=[
           'setuptools',
       ],

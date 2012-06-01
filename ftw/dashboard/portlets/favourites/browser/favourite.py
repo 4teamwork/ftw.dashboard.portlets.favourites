@@ -3,6 +3,9 @@ from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
 from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from Products.Five.browser import BrowserView
+from zope.component import getUtility
+from plone.i18n.normalizer.interfaces import IIDNormalizer
+import time
 
 
 class RemoveFavourite(BrowserView):
@@ -14,7 +17,7 @@ class RemoveFavourite(BrowserView):
         handler = getMultiAdapter((self.context, self.request),
             IFavouritesHandler)
 
-        fav_id = self.request.get('uid', '').replace('uid_', '')
+        fav_id = self.request.get('uid', '')
 
         handler.remove_favourite(fav_id)
 
@@ -31,7 +34,8 @@ class AddFavourite(BrowserView):
             IFavouritesHandler)
 
         view_url = self.context.absolute_url()
-        fav_id = 'fav_' + str(int(self.context.ZopeTime()))
+
+        fav_id = 'fav_' + getUtility(IIDNormalizer).normalize(time.time())
         utils = getToolByName(self.context, 'plone_utils')
 
         handler.add_favourite(

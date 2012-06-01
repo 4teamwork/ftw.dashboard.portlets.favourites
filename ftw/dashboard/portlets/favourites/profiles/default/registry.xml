@@ -6,6 +6,6 @@
             <description>Define the name of the favourites-folder</description>
             <value_type type="plone.registry.field.ASCIILine" />
         </field>
-        <value>favourites</value>
+        <value>Favourites</value>
     </record>
 </registry>

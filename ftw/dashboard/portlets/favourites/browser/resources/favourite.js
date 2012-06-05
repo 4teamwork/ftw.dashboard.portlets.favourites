@@ -2,8 +2,8 @@ jq(function(){
 
     // Make favourites removeable
     if(jq('.documentEditable').length !== 0){
-        jq('.favourite-listing').each(function(){
-            jq(this).children('.portletItem').each(function(){
+        jq('.draggable-favourites').each(function(){
+            jq(this).children('.favourite-item').each(function(){
                 if(!jq(this).hasClass('portletItemEmpty')){
                     jq(this).append('<a class="close favouriteRemove" title="entfernen"><img alt="remove" src = "'+portal_url+'/++resource++ftw.dashboard.portlets.favourites.resources/icon_remove_favourite.gif"/></a>');
                 }

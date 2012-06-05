@@ -1,4 +1,6 @@
-#dashboard .portletItemEmpty{
+#dashboard .favourite-item,
+#dashboard .favourite-empty{
+    cursor:move;
 	margin:0;
 	padding:1em;
 }

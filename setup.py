@@ -38,6 +38,7 @@ setup(name='ftw.dashboard.portlets.favourites',
       extras_require=dict(tests=tests_require),
       install_requires=[
           'setuptools',
+          'ftw.dashboard.dragndrop',
       ],
       entry_points="""
       # -*- Entry points: -*-

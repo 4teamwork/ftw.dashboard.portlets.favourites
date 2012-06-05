@@ -3,10 +3,8 @@
 
     <dt class="portletHeader clearfix">
 	  <span class="portletTopLeft"></span>
-      	<span class="title"
-          i18n:translate="box_favourites">favourites</span>
+      <span class="title" i18n:translate="portlet_title_favourites">Favourites</span>
       <span class="portletTopRight"></span>
-    
     </dt>
 
     <tal:items tal:repeat="item items">
@@ -18,9 +16,7 @@
                 <a href=""
                    tal:attributes="href python: item.getRemoteUrl.replace('resolveUid', 'resolveuid');
                                    title item/Title;">
-                    <tal:title content="item/Title">
-                        Title
-                    </tal:title>
+                    <tal:title content="item/Title" />
                 </a>
             </span>
         </dd>
@@ -29,7 +25,7 @@
     <dd class="portletItemEmpty portletItem" 
         tal:condition="not:items">
         
-        <span class="noEntries" i18n:translate="bodx_no_fav_items">
+        <span class="noEntries" i18n:translate="box_no_fav_items">
             No items.
         </span>
     </dd>

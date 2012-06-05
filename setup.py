@@ -6,6 +6,7 @@ version = '2.0.2.dev0'
 mainainter = 'Philipp Gross'
 tests_require = [
     'plone.app.testing',
+    'ftw.testing',
 ]
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,

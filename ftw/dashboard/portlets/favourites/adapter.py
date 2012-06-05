@@ -1,7 +1,6 @@
 from Products.CMFCore.utils import getToolByName
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
-from Products.CMFPlone.utils import base_hasattr
 
 
 class NoHomeFolderError(Exception):
@@ -22,7 +21,6 @@ class DefaultFavouritesHandler(object):
         self.context = context
         self.request = request
         self.addable_types = ['Link']
-        self.folder = self.get_favourites_folder()
 
     def create_favourites_folder(self):
         """ Create the favourites folder
@@ -37,10 +35,9 @@ class DefaultFavouritesHandler(object):
 
         folder = home_folder.get(foldername)
 
-        if base_hasattr(folder, 'setConstrainTypesMode'):
-            folder.setConstrainTypesMode(1)
-            folder.setImmediatelyAddableTypes(self.addable_types)
-            folder.setLocallyAllowedTypes(self.addable_types)
+        folder.setConstrainTypesMode(1)
+        folder.setImmediatelyAddableTypes(self.addable_types)
+        folder.setLocallyAllowedTypes(self.addable_types)
 
     def add_favourite(self, fav_id, title, remote_url):
         """ Add favourite to the favourites folder

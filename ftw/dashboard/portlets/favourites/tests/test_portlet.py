@@ -1,14 +1,14 @@
 # coding=UTF-8
+from ftw.dashboard.portlets.favourites.portlets import favourites
 from ftw.dashboard.portlets.favourites.testing import FAVOURITES_PLONE_LAYER
-from unittest2 import TestCase
-from plone.portlets.interfaces import IPortletType
-from plone.portlets.interfaces import IPortletManager
+from plone.app.testing import TEST_USER_ID
 from plone.portlets.interfaces import IPortletAssignment
 from plone.portlets.interfaces import IPortletDataProvider
+from plone.portlets.interfaces import IPortletManager
 from plone.portlets.interfaces import IPortletRenderer
+from plone.portlets.interfaces import IPortletType
+from unittest2 import TestCase
 from zope.component import getUtility, getMultiAdapter
-
-from ftw.dashboard.portlets.favourites.portlets import favourites
 
 
 class FavouriteTests(TestCase):
@@ -47,6 +47,20 @@ class FavouriteTests(TestCase):
 
         self.failUnless(renderer.available,
                         "Renderer should be available by default.")
+
+    def test_invoke_add_view(self):
+        portlet = getUtility(
+            IPortletType, name='ftw.dashboard.portlets.favourites')
+        mapping = self.portal.restrictedTraverse(
+            '++dashboard++plone.dashboard1+%s' % TEST_USER_ID)
+        for m in mapping.keys():
+            del mapping[m]
+        addview = mapping.restrictedTraverse('+/' + portlet.addview)
+
+        addview()
+
+        self.assertEquals(len(mapping), 1)
+        self.failUnless(isinstance(mapping.values()[0], favourites.Assignment))
 
 
 class TestRenderer(TestCase):

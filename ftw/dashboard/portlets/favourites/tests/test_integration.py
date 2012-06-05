@@ -1,6 +1,9 @@
 # coding=UTF-8
+from ftw.dashboard.portlets.favourites.adapter import DefaultFavouritesHandler
+from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from ftw.dashboard.portlets.favourites.testing import FAVOURITES_PLONE_LAYER
 from unittest2 import TestCase
+from zope.component import getMultiAdapter
 
 
 class FavouriteTests(TestCase):
@@ -17,6 +20,13 @@ class FavouriteTests(TestCase):
             "ftw.dashboard.portlets.favourites.foldername")
 
         self.assertEquals(value, u"Favourites")
+
+    def test_adapter_registration(self):
+
+        handler = getMultiAdapter((self.portal, self.request),
+            IFavouritesHandler)
+
+        self.assertTrue(isinstance(handler, DefaultFavouritesHandler))
 
     def test_integration(self):
 

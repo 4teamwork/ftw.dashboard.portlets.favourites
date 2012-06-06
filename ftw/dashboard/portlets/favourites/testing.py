@@ -51,7 +51,6 @@ class FavouritesPloneLayer(PloneSandboxLayer):
         mtool = portal.portal_membership
         mtool.setMemberareaCreationFlag()
         mtool.createMemberArea(TEST_USER_ID)
-        self.home = mtool.getHomeFolder()
 
 FavouritesPloneFixture = FavouritesPloneLayer()
 FAVOURITES_PLONE_LAYER = IntegrationTesting(

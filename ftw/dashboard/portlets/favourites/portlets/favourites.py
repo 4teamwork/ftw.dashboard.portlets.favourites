@@ -12,7 +12,7 @@ from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 
 
 class IFavouritePortlet(IPortletDataProvider):
-    """
+    """ Portlet to handle favourites
     """
 
 

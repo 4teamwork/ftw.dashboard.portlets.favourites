@@ -2,14 +2,9 @@ Changelog
 =========
 
 
-2.0.3 (unreleased)
-------------------
 
-- Nothing changed yet.
-
-
-2.0.2 (2012-10-16)
-------------------
+3.0 (unreleased)
+----------------
 
 - Full refactored. Favourites full configurable over the portlet.
   [eschmutz]

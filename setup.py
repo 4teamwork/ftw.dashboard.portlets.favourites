@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 
-version = '2.0.3.dev0'
+version = '3.0.dev0'
 mainainter = 'Philipp Gross'
 tests_require = [
     'plone.app.testing',
@@ -10,10 +10,11 @@ tests_require = [
 ]
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,
-      description="A favourite Portlet, which shows your favourites on the dashboard",
+      description="A favourite Portlet",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      # Get more strings from
+      # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
         'Framework :: Plone :: 4.0',

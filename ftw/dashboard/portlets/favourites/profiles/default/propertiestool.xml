@@ -4,5 +4,6 @@
 	<property name="addable_portlets" type="lines" purge="false">
 	   	<element value="ftw.dashboard.portlets.favourites"/>
   	</property>
+  	<property name="columnNumber" type="int">4</property>
  </object>
 </object>

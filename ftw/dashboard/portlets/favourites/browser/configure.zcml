@@ -1,30 +1,36 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="ftw.dashboard.portlets.favourites">
 
-<!-- Resource directory -->
-<browser:resourceDirectory
-    name="ftw.dashboard.portlets.favourites.resources"
-    directory="resources"
-    /> 
+    <!-- Resource directory -->
+    <browser:resourceDirectory
+        name="ftw.dashboard.portlets.favourites.resources"
+        directory="resources"
+        />
 
-<plone:portlet
-    name="ftw.dashboard.portlets.favourites"
-    interface=".favourites.IFavouritePortlet"
-    assignment=".favourites.Assignment"
-    renderer=".favourites.Renderer"
-    addview=".favourites.AddForm"
-    />
-    
-<browser:view
-    for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    name="ftw.dashboard.portlets.favourite.delete"
-    permission="zope.Public"
-    class=".deleteFavourite.deleteFavourite"
-    />
-    
+    <browser:page
+        for="*"
+        name="reorder_favourites"
+        class=".favourite.ReorderFavourites"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="*"
+        name="add_to_favourites"
+        permission="zope2.View"
+        class=".favourite.AddFavourite"
+        />
+
+    <browser:view
+        for="*"
+        name="remove_from_favourites"
+        permission="zope2.View"
+        class=".favourite.RemoveFavourite"
+        />
+
+
 </configure>
+
 

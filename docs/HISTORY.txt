@@ -2,11 +2,15 @@ Changelog
 =========
 
 
-2.0.2 (unreleased)
-------------------
+
+3.0 (unreleased)
+----------------
 
 - Added a description to addtofavorites action, so there is a tooltip.
   [Julian Infanger]
+
+- Full refactored. Favourites full configurable over the portlet.
+  [eschmutz]
 
 
 2.0.1 (2012-03-05)

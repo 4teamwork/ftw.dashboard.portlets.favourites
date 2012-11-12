@@ -7,12 +7,14 @@ mainainter = 'Philipp Gross'
 tests_require = [
     'plone.app.testing',
     'ftw.testing',
-]
+    ]
+
 setup(name='ftw.dashboard.portlets.favourites',
       version=version,
       description="A favourite Portlet",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" + \
+          open(os.path.join("docs", "HISTORY.txt")).read(),
+
       # Get more strings from
       # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -29,18 +31,21 @@ setup(name='ftw.dashboard.portlets.favourites',
       keywords='ftw dashboard portlet favourites favorites',
       author='4teamwork GmbH',
       author_email='mailto:info@4teamwork.ch',
-      url='http://plone.org/products/ftw.dashboard.portlets.favourites/',
+      url='https://github.com/4teamwork/ftw.dashboard.portlets.favourites',
       license='GPL2',
+
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['ftw', 'ftw.dashboard', 'ftw.dashboard.portlets'],
       include_package_data=True,
       zip_safe=False,
+
+      install_requires=[
+        'setuptools',
+        'ftw.dashboard.dragndrop',
+        ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      install_requires=[
-          'setuptools',
-          'ftw.dashboard.dragndrop',
-      ],
+
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]

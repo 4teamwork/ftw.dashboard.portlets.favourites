@@ -3,7 +3,7 @@ Changelog
 
 
 
-3.0 (unreleased)
+3.0 (2013-01-25)
 ----------------
 
 - Full refactored. Favourites full configurable over the portlet.

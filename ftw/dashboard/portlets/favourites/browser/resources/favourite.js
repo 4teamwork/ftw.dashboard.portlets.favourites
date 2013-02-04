@@ -1,4 +1,4 @@
-$(function(){
+jQuery(function($){
 
     // Make favourites removeable
     if($('.documentEditable').length !== 0){

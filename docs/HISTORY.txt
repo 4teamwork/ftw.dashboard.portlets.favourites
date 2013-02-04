@@ -6,7 +6,8 @@ Changelog
 3.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Replace jq by $.
+  [mathias.leimgruber]
 
 
 3.0 (2013-01-25)

@@ -42,6 +42,7 @@ setup(name='ftw.dashboard.portlets.favourites',
       install_requires=[
         'setuptools',
         'ftw.dashboard.dragndrop',
+        'ftw.upgrade',
         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),

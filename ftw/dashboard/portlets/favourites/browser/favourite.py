@@ -44,9 +44,12 @@ class AddFavourite(BrowserView):
             self.context.portal_url.getRelativeUrl(self.context),
             )
 
+        title = self.context.title_or_id()
+        if not isinstance(title, unicode):
+            title = title.decode('utf-8')
         msg = _(
             u'${title} has been added to your Favourites.',
-            mapping={u'title': self.context.title_or_id().decode('utf-8')})
+            mapping={u'title': title})
 
         utils.addPortalMessage(msg)
 

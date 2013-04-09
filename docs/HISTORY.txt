@@ -6,6 +6,10 @@ Changelog
 3.1 (unreleased)
 ----------------
 
+- Fixed UnicodeEncodeError in AddFavourite, wich happens when
+  adding a Dexterity Item with a non-ascii title to the Favourites.
+  [phgross]
+
 - Replace jq by $.
   [mathias.leimgruber]
 

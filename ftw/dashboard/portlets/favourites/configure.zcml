@@ -10,6 +10,7 @@
 
     <include package=".browser" />
     <include package=".portlets" />
+    <include package=".upgrades" />
 
     <i18n:registerTranslations directory="locales" />
 

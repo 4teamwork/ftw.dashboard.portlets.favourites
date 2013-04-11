@@ -6,15 +6,18 @@ Changelog
 3.1 (unreleased)
 ----------------
 
-- Added Migration Upgradestep for old favourite portlets to the new implementation(3.0).
+- Added Migration Upgradestep for old favourite portlets to the new implementation (3.0).
   [phgross]
 
 - Fixed UnicodeEncodeError in AddFavourite, wich happens when
-  adding a Dexterity Item with a non-ascii title to the Favourites.
+  adding a Dexterity item with a non-ascii title to the Favourites.
   [phgross]
 
 - Replace jq by $.
   [mathias.leimgruber]
+
+- Updated German translations.
+  [phabegger]
 
 
 3.0 (2013-01-25)

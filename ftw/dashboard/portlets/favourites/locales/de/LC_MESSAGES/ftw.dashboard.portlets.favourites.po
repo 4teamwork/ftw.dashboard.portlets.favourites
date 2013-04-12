@@ -22,7 +22,7 @@ msgstr "Zu den Favoriten hinzufügen"
 
 #: ./ftw/dashboard/portlets/favourites/profiles/default/actions.xml
 msgid "Add to your Favourites."
-msgstr "Fügt das aktuelle Object ihren Favoriten hinzu."
+msgstr "Fügt die aktuelle Seite zu Ihren Favoriten hinzu."
 
 #. Default: "Favourites"
 #: ./ftw/dashboard/portlets/favourites/portlets/favourites.py:24
@@ -36,7 +36,7 @@ msgstr "Portlet wurde bearbeitet"
 #. Default: "No items."
 #: ./ftw/dashboard/portlets/favourites/portlets/templates/favourites.pt:30
 msgid "box_no_fav_items"
-msgstr "Keine Favoriten verfügbar."
+msgstr "Keine Favoriten vorhanden."
 
 #. Default: "Favourites"
 #: ./ftw/dashboard/portlets/favourites/portlets/templates/favourites.pt:6
@@ -46,6 +46,6 @@ msgstr "Favoriten"
 #. Default: "Favourites portlet"
 #: ./ftw/dashboard/portlets/favourites/profiles/default/portlets.xml
 msgid "title_favourites_portlet"
-msgstr "Favoriten Portlet"
+msgstr "Favoriten-Portlet"
 
 

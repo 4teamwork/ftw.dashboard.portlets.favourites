@@ -40,6 +40,8 @@ class FavouriteTests(TestCase):
         content = self.home['Favourites'].listFolderContents()
 
         self.assertTrue(len(content) == 2)
+        self.assertEquals('Test Folder', content[1].title)
+        self.assertEquals('test_folder', content[1].remote_url())
 
         # Ordering
         links = [link.id for link in content]

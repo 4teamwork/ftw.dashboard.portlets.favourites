@@ -6,7 +6,9 @@ Changelog
 3.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed link creation for users without `Modify portal content` permission
+  on the favouritefolder.
+  [phgross]
 
 
 3.1 (2013-04-16)
@@ -97,4 +99,3 @@ Changelog
 ---
 
 - Initial release
-

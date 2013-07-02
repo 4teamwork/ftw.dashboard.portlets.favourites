@@ -43,15 +43,12 @@ class DefaultFavouritesHandler(object):
         """ Add favourite to the favourites folder
         """
         folder = self.get_favourites_folder()
-        folder.invokeFactory(
-            'Link',
-            id=fav_id,
-            title=title,
-            remote_url=remote_url)
-
+        folder.invokeFactory('Link', id=fav_id)
         favourite = folder.get(fav_id)
-        favourite.reindexObject()
 
+        favourite.setRemoteUrl(remote_url)
+        favourite.setTitle(title)
+        favourite.reindexObject()
         return favourite
 
     def remove_favourite(self, fav_id):

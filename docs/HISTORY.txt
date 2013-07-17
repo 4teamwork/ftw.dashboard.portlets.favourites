@@ -6,6 +6,9 @@ Changelog
 3.1.1 (unreleased)
 ------------------
 
+- Do not use move cursor on empty favourite items.
+  [Julian Infanger]
+
 - Fixed link creation for users without `Modify portal content` permission
   on the favouritefolder.
   [phgross]

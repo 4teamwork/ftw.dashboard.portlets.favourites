@@ -1,6 +1,8 @@
-#dashboard .favourite-item,
-#dashboard .favourite-empty{
+#dashboard .favourite-item {
     cursor:move;
+}
+#dashboard .favourite-item,
+#dashboard .favourite-empty {
 	margin:0;
 	padding:1em;
 }

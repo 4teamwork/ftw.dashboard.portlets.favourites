@@ -3,7 +3,7 @@ Changelog
 
 
 
-3.1.1 (unreleased)
+3.1.1 (2013-08-15)
 ------------------
 
 - Do not use move cursor on empty favourite items.

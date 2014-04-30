@@ -6,7 +6,8 @@ Changelog
 3.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add upgradestep to migrate every favorites-folder-name from "Favourites" to "Favorites"
+  [elioschmutz]
 
 
 3.1.1 (2013-08-15)

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<registry>
+    <record name="ftw.dashboard.portlets.favourites.foldername">
+        <value>Favorites</value>
+    </record>
+</registry>

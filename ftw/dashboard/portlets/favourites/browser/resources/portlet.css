@@ -6,3 +6,8 @@
 	margin:0;
 	padding:1em;
 }
+
+#dashboard .favourite-item .title {
+    width:93%;
+    display:inline-block;
+}

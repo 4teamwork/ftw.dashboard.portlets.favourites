@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 
-version = '3.1.2'
+version = '3.1.3.dev0'
 mainainter = 'Philipp Gross'
 tests_require = [
     'plone.app.testing',

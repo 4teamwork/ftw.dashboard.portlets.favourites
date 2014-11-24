@@ -30,6 +30,12 @@
         class=".favourite.RemoveFavourite"
         />
 
+    <browser:view
+        for="*"
+        name="rename_favourite"
+        permission="zope2.View"
+        class=".favourite.RenameFavourite"
+        />
 
 </configure>
 

@@ -64,6 +64,17 @@ class DefaultFavouritesHandler(object):
 
         return True
 
+    def rename_favourite(self, fav_id, title):
+        """ Rename a favourite
+        """
+        folder = self.get_favourites_folder()
+        favourite = folder.get(fav_id)
+        if favourite:
+            favourite.setTitle(title)
+            favourite.reindexObject()
+            return True
+        return False
+
     def order_favourites(self, fav_ids=[]):
         """ Reorder the favourites in the given order of fav_ids
         """

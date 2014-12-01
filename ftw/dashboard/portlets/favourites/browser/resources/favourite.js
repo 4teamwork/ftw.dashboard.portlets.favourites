@@ -5,11 +5,13 @@ jQuery(function($) {
   var $favouriteContainer;
   var $editing = null;
   var keyCodes = {
-    'escape' : 27,
-    'enter' : 13
+    'escape': 27,
+    'enter': 13
   };
   var editFavouriteElement = '<a class="close favouriteRename" title="umbenennen"><img alt="rename" src = "' + portal_url + '/++resource++ftw.dashboard.portlets.favourites.resources/icon_rename_favourite.gif"/></a>';
   var removeFavouriteElement = '<a class="close favouriteRemove" title="entfernen"><img alt="remove" src = "' + portal_url + '/++resource++ftw.dashboard.portlets.favourites.resources/icon_remove_favourite.gif"/></a>';
+  var submitFavouriteElement = '<a class="close favouriteSubmit" title="speichern"><img alt="save" src = "' + portal_url + '/++resource++ftw.dashboard.portlets.favourites.resources/icon_submit_favourite.gif"/></a>';
+
 
   var makeFavouritesEditable = function($element) {
     if ($('.documentEditable').length !== 0) {
@@ -17,6 +19,7 @@ jQuery(function($) {
         if (!$element.hasClass('portletItemEmpty')) {
           $element.append(removeFavouriteElement);
           $element.append(editFavouriteElement);
+          $element.append(submitFavouriteElement);
         }
       } else {
         $('.draggable-favourites').each(function() {
@@ -24,6 +27,7 @@ jQuery(function($) {
             if (!$(this).hasClass('portletItemEmpty')) {
               $(this).append(removeFavouriteElement);
               $(this).append(editFavouriteElement);
+              $(this).append(submitFavouriteElement);
             }
           });
         });
@@ -32,11 +36,15 @@ jQuery(function($) {
     }
 
     $('.favouriteRemove').off('click').on('click', function(event) {
-        removeFavourite.call(this, event);
+      removeFavourite.call(this, event);
     });
 
     $('.favouriteRename').off('click').on('click', function() {
       makeFavouriteRenameable.call(this);
+    });
+
+    $('.favouriteSubmit').off('click').on('click', function() {
+      renameFavourite.call(this);
     });
 
   };
@@ -45,8 +53,8 @@ jQuery(function($) {
     event.stopPropagation();
     event.preventDefault();
     var $record = $(this).closest('dd');
-    if($editing && $editing.is($record)) {
-        $editing = null;
+    if ($editing && $editing.is($record)) {
+      $editing = null;
     }
     var removeResponse = $.ajax({
       type: 'POST',
@@ -62,6 +70,10 @@ jQuery(function($) {
     reloadResponse.done(function(data) {
       $favouriteContainer.empty().html($('#' + favouriteId, data).html());
       makeFavouritesEditable($favouriteContainer);
+      $editButton = $favouriteContainer.find('.favouriteRename');
+      $submitButton = $favouriteContainer.find('.favouriteSubmit');
+      $editButton.show();
+      $submitButton.hide();
     });
 
     reloadResponse.fail(function() {
@@ -75,7 +87,6 @@ jQuery(function($) {
       url: './rename_favourite',
       data: 'uid=' + favouriteId + '&title=' + $titleInputField.val()
     });
-
     renameResponse.always(function() {
       reloadFavourite();
     });
@@ -99,14 +110,16 @@ jQuery(function($) {
 
   var handleLooseFocus = function(event) {
     var $target = $(event.target);
-    if(!($target.is($titleInputField) || $target.parent().hasClass('favouriteRename'))) {
-        reloadFavourite();
+    if (!($target.is($titleInputField) || $target.parent().hasClass('favouriteRename'))) {
+      reloadFavourite();
     }
   };
 
   var makeFavouriteRenameable = function() {
     if (!$editing) {
       $favouriteContainer = $(this).closest('dd');
+      $editButton = $favouriteContainer.find('.favouriteRename');
+      $submitButton = $favouriteContainer.find('.favouriteSubmit');
       $editing = $favouriteContainer;
       if ($favouriteContainer.find('input').length === 0) {
         var $titleWrapper = $favouriteContainer.find('span');
@@ -115,6 +128,8 @@ jQuery(function($) {
         favouriteId = $favouriteContainer.attr("id");
         $titleInputField = $('<input type="text" name="rename_favourite" />').attr('id', favouriteId).val(titleText);
         $titleWrapper.hide();
+        $editButton.hide();
+        $submitButton.show();
         $favouriteContainer.append($titleInputField).fadeIn('fast');
         $titleInputField.focus().select();
         $titleInputField.off('keyup').on('keyup', handleFavouriteRename);

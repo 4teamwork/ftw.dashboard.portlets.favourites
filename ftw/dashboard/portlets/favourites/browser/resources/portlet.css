@@ -11,3 +11,11 @@
     width:89%;
     display:inline-block;
 }
+
+#dashboard .favourite-item input {
+    width: auto;
+}
+
+#dashboard .favourite-item .favouriteSubmit {
+    display: none;
+}

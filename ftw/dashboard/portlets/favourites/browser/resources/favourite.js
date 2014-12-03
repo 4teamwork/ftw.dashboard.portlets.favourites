@@ -77,8 +77,10 @@ jQuery(function($) {
     });
 
     reloadResponse.fail(function() {
-      window.location.reload();
+      reloadPage();
     });
+
+    return false;
   };
 
   var renameFavourite = function() {
@@ -87,8 +89,11 @@ jQuery(function($) {
       url: './rename_favourite',
       data: 'uid=' + favouriteId + '&title=' + $titleInputField.val()
     });
-    renameResponse.always(function() {
+    renameResponse.done(function() {
       reloadFavourite();
+    });
+    renameResponse.fail(function() {
+      reloadPage();
     });
   };
 
@@ -138,6 +143,13 @@ jQuery(function($) {
 
     }
 
+  };
+
+  // FF-hack
+  var reloadPage = function() {
+    setTimeout(function() {
+      window.location.reload();
+    }, 1000);
   };
 
   // Make favourites sortable

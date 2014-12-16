@@ -18,6 +18,10 @@ class IFavouritesHandler(Interface):
         """ Remove favourite from th favourites folder
         """
 
+    def rename_favourite(self, fav_id, title):
+        """ Rename a favourite
+        """
+
     def order_favourites(self, fav_ids=[]):
         """ Reorder the favourites in the given order of fav_ids
         """

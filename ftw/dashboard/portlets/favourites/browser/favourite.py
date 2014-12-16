@@ -1,11 +1,14 @@
-from ftw.dashboard.portlets.favourites import favouriteMessageFactory as _
+import json
+import time
+
 from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
-from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from Products.Five.browser import BrowserView
 from zope.component import getUtility
 from plone.i18n.normalizer.interfaces import IIDNormalizer
-import time
+
+from ftw.dashboard.portlets.favourites import favouriteMessageFactory as _
+from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 
 
 class RemoveFavourite(BrowserView):
@@ -22,6 +25,25 @@ class RemoveFavourite(BrowserView):
         handler.remove_favourite(fav_id)
 
         return 'ok'
+
+
+class RenameFavourite(BrowserView):
+    """Renames a favourite
+    """
+
+    def __call__(self, *args, **kwargs):
+
+        handler = getMultiAdapter(
+            (self.context, self.request),
+            IFavouritesHandler
+        )
+
+        fav_id = self.request.get('uid', '')
+        title = self.request.get('title', '')
+
+        handler.rename_favourite(fav_id, title)
+
+        return json.dumps({'success': True})
 
 
 class AddFavourite(BrowserView):

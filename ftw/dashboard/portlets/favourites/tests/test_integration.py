@@ -19,7 +19,7 @@ class FavouriteTests(TestCase):
         value = self.portal.portal_registry.get(
             "ftw.dashboard.portlets.favourites.foldername")
 
-        self.assertEquals(value, u"Favourites")
+        self.assertEquals(value, u"Favorites")
 
     def test_adapter_registration(self):
 
@@ -37,7 +37,7 @@ class FavouriteTests(TestCase):
         self.portal.restrictedTraverse('add_to_favourites')()
         self.portal.test_folder.restrictedTraverse('add_to_favourites')()
 
-        content = self.home['Favourites'].listFolderContents()
+        content = self.home['Favorites'].listFolderContents()
 
         self.assertTrue(len(content) == 2)
         self.assertEquals('Test Folder', content[1].title)
@@ -49,21 +49,21 @@ class FavouriteTests(TestCase):
         self.request['favourites'] = links
 
         self.assertEquals(
-            content, self.home['Favourites'].listFolderContents())
+            content, self.home['Favorites'].listFolderContents())
 
         self.portal.restrictedTraverse('reorder_favourites')()
 
         self.assertNotEquals(
-            content, self.home['Favourites'].listFolderContents())
+            content, self.home['Favorites'].listFolderContents())
 
         # Removing
         self.request['uid'] = content[0].id
 
         self.portal.restrictedTraverse('remove_from_favourites')()
 
-        self.assertTrue(len(self.home['Favourites'].listFolderContents()) == 1)
+        self.assertTrue(len(self.home['Favorites'].listFolderContents()) == 1)
 
         # Cleanup
         self.portal.manage_delObjects(['test_folder'])
-        self.home.Favourites.manage_delObjects(
-            [link.id for link in self.home['Favourites'].listFolderContents()])
+        self.home.Favorites.manage_delObjects(
+            [link.id for link in self.home['Favorites'].listFolderContents()])

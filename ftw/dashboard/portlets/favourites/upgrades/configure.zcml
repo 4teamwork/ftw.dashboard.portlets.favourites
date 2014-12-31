@@ -1,7 +1,10 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     i18n_domain="ftw.dashboard.portlets.favourites">
+
+    <include package="ftw.upgrade" file="meta.zcml" />
 
     <!-- 1 -> 3001 -->
     <genericsetup:upgradeStep
@@ -12,5 +15,24 @@
         handler="ftw.dashboard.portlets.favourites.upgrades.to3001.ReplaceOldFavouritePortlets"
         profile="ftw.dashboard.portlets.favourites:default"
         />
+
+    <!-- 3001 -> 3002 -->
+    <upgrade-step:importProfile
+        title="Update registry value: Change Favourites to Favorites"
+        profile="ftw.dashboard.portlets.favourites:default"
+        source="3001"
+        destination="3002"
+        directory="profiles/3002"
+        />
+
+    <!-- 3002 -> 3003 -->
+    <genericsetup:upgradeStep
+        profile="ftw.dashboard.portlets.favourites:default"
+        source="3002"
+        destination="3003"
+        title="Migrate folders: Favourites to Favorites"
+        handler=".to3003.MigrateFavouritesToFavorites"
+        />
+
 
 </configure>

@@ -8,8 +8,8 @@
     </dt>
 
     <dd class='portletItem'>
+        <input type="text" id="favourite_filter" name="favourite_filter"/>
         <dl class='draggable-favourites'>
-            
             <tal:items tal:repeat="item items">
 
                 <dd tal:define="oddrow repeat/item/odd;"
@@ -25,9 +25,9 @@
                 </dd>
             </tal:items>
 
-            <dd class="favourite-empty" 
+            <dd class="favourite-empty"
                 tal:condition="not:items">
-        
+
                 <span class="noEntries" i18n:translate="box_no_fav_items">
                     No items.
                 </span>

@@ -184,4 +184,23 @@ jQuery(function($) {
 
   makeFavouritesEditable();
 
+  var allFavouriteItems = $(".favourite-item");
+
+  var filterFavourite = function(searchTerm) {
+
+    var matchingElements = allFavouriteItems.filter(function(index, item) {
+      return $("a", item).html().trim().toLowerCase().indexOf(searchTerm.trim().toLowerCase()) >= 0;
+    });
+
+    $(".draggable-favourites").html(matchingElements);
+
+    if(searchTerm.trim() === "") {
+      $(".draggable-favourites").html(allFavouriteItems);
+    }
+  };
+
+  $("#favourite_filter").on("keyup", function() {
+    filterFavourite($(this).val());
+  });
+
 });

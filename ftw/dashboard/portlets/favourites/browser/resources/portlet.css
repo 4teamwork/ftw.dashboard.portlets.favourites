@@ -1,3 +1,12 @@
+#favourite_filter {
+  width: 100%;
+  box-sizing: border-box;
+}
+.draggable-favourites {
+  max-height: 300px;
+  overflow: auto;
+}
+
 #dashboard .favourite-item {
     cursor:move;
 }

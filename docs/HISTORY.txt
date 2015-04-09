@@ -6,6 +6,9 @@ Changelog
 3.2.1 (unreleased)
 ------------------
 
+- Added CSRF protection with plone.protect.
+  [phgross]
+
 - Adjust javascript to fix plone 4.1 and 4.2 compatibility.
   [phgross]
 

@@ -1,4 +1,5 @@
 <dl class="portlet favourite-listing" i18n:domain="ftw.dashboard.portlets.favourites"
+    tal:attributes="data-authenticator-token view/authenticator_token"
     tal:define="items view/items">
 
     <dt class="portletHeader clearfix">
@@ -36,4 +37,3 @@
     </dd>
 
 </dl>
-

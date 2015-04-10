@@ -1,14 +1,23 @@
 from ftw.dashboard.portlets.favourites import favouriteMessageFactory as _
+from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from plone.app.portlets.browser.formhelper import NullAddForm
 from plone.app.portlets.cache import render_cachekey
 from plone.app.portlets.portlets import base
 from plone.memoize.compress import xhtml_compress
 from plone.portlets.interfaces import IPortletDataProvider
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from zope.interface import implements
 from Products.statusmessages.interfaces import IStatusMessage
 from zope.component import getMultiAdapter
-from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
+from zope.interface import implements
+
+
+# Try to get the plone.protect's createToken method, because it's only
+# available since version 2.0.2, otherwise we just use a mocked method.
+try:
+    from plone.protect import createToken
+except ImportError:
+    def createToken():
+        return ''
 
 
 class IFavouritePortlet(IPortletDataProvider):
@@ -42,6 +51,9 @@ class Renderer(base.Renderer):
 
     def render(self):
         return xhtml_compress(self._template())
+
+    def authenticator_token(self):
+        return createToken()
 
 
 class AddForm(NullAddForm):

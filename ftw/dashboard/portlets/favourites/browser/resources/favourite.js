@@ -1,5 +1,6 @@
 jQuery(function($) {
 
+  var authenticator_token = $('.portlet.favourite-listing').data('authenticator-token');
   var favouriteId;
   var $titleInputField;
   var $favouriteContainer;
@@ -65,7 +66,10 @@ jQuery(function($) {
     var removeResponse = $.ajax({
       type: 'POST',
       url: './remove_from_favourites',
-      data: 'uid=' + $record.attr("id")
+      data: 'uid=' + $record.attr("id"),
+      beforeSend: function (request){
+        request.setRequestHeader("X-CSRF-TOKEN", authenticator_token);
+      }
     });
     $record.hide().remove();
   };
@@ -75,6 +79,9 @@ jQuery(function($) {
 
     $.ajax({
       url: window.location.href,
+      beforeSend: function (request){
+        request.setRequestHeader("X-CSRF-TOKEN", authenticator_token);
+      },
       success: function(data) {
         $favouriteContainer.empty().html($('#' + favouriteId, data).html());
         makeFavouritesEditable($favouriteContainer);
@@ -94,6 +101,9 @@ jQuery(function($) {
       type: 'POST',
       url: './rename_favourite',
       data: 'uid=' + favouriteId + '&title=' + $titleInputField.val(),
+      beforeSend: function (request){
+        request.setRequestHeader("X-CSRF-TOKEN", authenticator_token);
+      },
       success: function() {
         reloadFavourite();
       },
@@ -176,7 +186,10 @@ jQuery(function($) {
     $.ajax({
       type: 'POST',
       url: './@@reorder_favourites',
-      data: customSerialization(this)
+      data: customSerialization(this),
+      beforeSend: function (request){
+        request.setRequestHeader("X-CSRF-TOKEN", authenticator_token);
+      }
     });
   };
 

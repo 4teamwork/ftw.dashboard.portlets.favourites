@@ -35,15 +35,21 @@ jQuery(function($) {
 
     }
 
-    $('.favouriteRemove').off('click').on('click', function(event) {
-      removeFavourite.call(this, event);
+    $('.favouriteRemove').click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      removeFavourite.call(this, e);
     });
 
-    $('.favouriteRename').off('click').on('click', function() {
+    $('.favouriteRename').click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
       makeFavouriteRenameable.call(this);
     });
 
-    $('.favouriteSubmit').off('click').on('click', function() {
+    $('.favouriteSubmit').click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
       renameFavourite.call(this);
     });
 
@@ -66,34 +72,34 @@ jQuery(function($) {
 
   var reloadFavourite = function() {
     $editing = null;
-    var reloadResponse = $.get(window.location.href);
-    reloadResponse.done(function(data) {
-      $favouriteContainer.empty().html($('#' + favouriteId, data).html());
-      makeFavouritesEditable($favouriteContainer);
-      $editButton = $favouriteContainer.find('.favouriteRename');
-      $submitButton = $favouriteContainer.find('.favouriteSubmit');
-      $editButton.show();
-      $submitButton.hide();
-    });
 
-    reloadResponse.fail(function() {
-      reloadPage();
+    $.ajax({
+      url: window.location.href,
+      success: function(data) {
+        $favouriteContainer.empty().html($('#' + favouriteId, data).html());
+        makeFavouritesEditable($favouriteContainer);
+        $editButton = $favouriteContainer.find('.favouriteRename');
+        $submitButton = $favouriteContainer.find('.favouriteSubmit');
+        $editButton.show();
+        $submitButton.hide();
+      },
+      error: function() {
+        reloadPage();
+      }
     });
-
-    return false;
   };
 
   var renameFavourite = function() {
-    var renameResponse = $.ajax({
+    $.ajax({
       type: 'POST',
       url: './rename_favourite',
-      data: 'uid=' + favouriteId + '&title=' + $titleInputField.val()
-    });
-    renameResponse.done(function() {
-      reloadFavourite();
-    });
-    renameResponse.fail(function() {
-      reloadPage();
+      data: 'uid=' + favouriteId + '&title=' + $titleInputField.val(),
+      success: function() {
+        reloadFavourite();
+      },
+      error: function() {
+        reloadPage();
+      }
     });
   };
 
@@ -199,7 +205,7 @@ jQuery(function($) {
     }
   };
 
-  $("#favourite_filter").on("keyup", function() {
+  $("#favourite_filter").keyup(function() {
     filterFavourite($(this).val());
   });
 

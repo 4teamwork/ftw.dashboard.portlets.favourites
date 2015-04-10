@@ -6,6 +6,9 @@ Changelog
 3.2.1 (unreleased)
 ------------------
 
+- Adjust javascript to fix plone 4.1 and 4.2 compatibility.
+  [phgross]
+
 - Make favourite Portlet filterable.
   [Kevin Bieri]
 

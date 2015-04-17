@@ -7,7 +7,7 @@
    <object name="addtofavourites" meta_type="CMF Action" i18n:domain="ftw.dashboard.portlets.favourites">
     <property name="title" i18n:translate="">Add to Favourites</property>
     <property name="description" i18n:translate="">Add to your Favourites.</property>
-    <property name="url_expr">string:${object_url}/@@add_to_favourites</property>
+    <property name="url_expr">python: here.restrictedTraverse('add_to_favourites').get_url()</property>
     <property name="icon_expr"> string:${globals_view/navigationRootUrl}/++resource++ftw.dashboard.portlets.favourites.resources/icon_add_favorite.gif</property>
     <property
        name="available_expr">python:(member is not None) and (portal.portal_membership.getHomeFolder() is not None)</property>

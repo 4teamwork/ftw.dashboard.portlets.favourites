@@ -1,14 +1,21 @@
+from ftw.dashboard.portlets.favourites import favouriteMessageFactory as _
+from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
+from plone.i18n.normalizer.interfaces import IIDNormalizer
+from Products.CMFCore.utils import getToolByName
+from Products.Five.browser import BrowserView
+from zope.component import getMultiAdapter
+from zope.component import getUtility
 import json
 import time
 
-from zope.component import getMultiAdapter
-from Products.CMFCore.utils import getToolByName
-from Products.Five.browser import BrowserView
-from zope.component import getUtility
-from plone.i18n.normalizer.interfaces import IIDNormalizer
 
-from ftw.dashboard.portlets.favourites import favouriteMessageFactory as _
-from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
+# Try to get the plone.protect's createToken method, because it's only
+# available since version 2.0.2, otherwise we just use a mocked method.
+try:
+    from plone.protect import createToken
+    PLONE_PROTECT_AVAILABLE = True
+except ImportError:
+    PLONE_PROTECT_AVAILABLE = False
 
 
 class RemoveFavourite(BrowserView):
@@ -50,8 +57,19 @@ class AddFavourite(BrowserView):
     """ Add a favourite
     """
 
-    def __call__(self):
+    def get_url(self):
+        """Returns url for adding the current context to the favourites.
+        """
+        url = '{}/@@add_to_favourites/add'.format(self.context.absolute_url())
 
+        if PLONE_PROTECT_AVAILABLE:
+            url = '{}?_authenticator={}'.format(url, createToken())
+
+        return url
+
+    def add(self):
+        """Add a favourite of the current context.
+        """
         handler = getMultiAdapter((self.context, self.request),
             IFavouritesHandler)
 

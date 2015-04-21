@@ -6,7 +6,8 @@ Changelog
 3.3.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Made Add to Favourites action CSRF safe.
+  [phgross]
 
 
 3.3.0 (2015-04-13)

@@ -92,7 +92,7 @@ class TestRenderer(TestCase):
 
     def test_render(self):
 
-        self.portal.restrictedTraverse('add_to_favourites')()
+        self.portal.restrictedTraverse('add_to_favourites').add()
 
         r = self.renderer(assignment=favourites.Assignment())
         r = r.__of__(self.portal)

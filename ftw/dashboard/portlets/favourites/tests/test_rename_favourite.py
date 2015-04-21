@@ -15,7 +15,7 @@ class RenameFavouriteTests(TestCase):
 
     def test_rename_favourite(self):
         self.portal.invokeFactory("Folder", id="test_folder", title="Test Folder")
-        self.portal.test_folder.restrictedTraverse('add_to_favourites')()
+        self.portal.test_folder.restrictedTraverse('add_to_favourites').add()
 
         favourite = self.home['Favourites'].listFolderContents()[0]
 

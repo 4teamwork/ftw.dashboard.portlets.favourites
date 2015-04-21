@@ -34,8 +34,8 @@ class FavouriteTests(TestCase):
             "Folder", id="test_folder", title="Test Folder")
 
         # Adding
-        self.portal.restrictedTraverse('add_to_favourites')()
-        self.portal.test_folder.restrictedTraverse('add_to_favourites')()
+        self.portal.restrictedTraverse('add_to_favourites').add()
+        self.portal.test_folder.restrictedTraverse('add_to_favourites').add()
 
         content = self.home['Favourites'].listFolderContents()
 

@@ -1,7 +1,10 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     i18n_domain="ftw.dashboard.portlets.favourites">
+
+    <include package="ftw.upgrade" file="meta.zcml" />
 
     <!-- 1 -> 3001 -->
     <genericsetup:upgradeStep
@@ -11,6 +14,15 @@
         destination="3001"
         handler="ftw.dashboard.portlets.favourites.upgrades.to3001.ReplaceOldFavouritePortlets"
         profile="ftw.dashboard.portlets.favourites:default"
+        />
+
+    <!-- 3001 -> 3301 -->
+    <upgrade-step:importProfile
+        title="Made Add to Favourites action CSRF safe."
+        profile="ftw.dashboard.portlets.favourites:default"
+        source="3001"
+        destination="3301"
+        directory="profiles/3301"
         />
 
 </configure>

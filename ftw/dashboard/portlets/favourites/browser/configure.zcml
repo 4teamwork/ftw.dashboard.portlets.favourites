@@ -21,6 +21,7 @@
         name="add_to_favourites"
         permission="zope2.View"
         class=".favourite.AddFavourite"
+        allowed_attributes="get_url add"
         />
 
     <browser:view
@@ -38,5 +39,3 @@
         />
 
 </configure>
-
-

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        i18n:domain="ftw.dashboard.portlets.favourites">
+
+  <object name="document_actions" meta_type="CMF Action Category">
+    <object name="addtofavourites" meta_type="CMF Action">
+      <property name="url_expr">python: here.restrictedTraverse('add_to_favourites').get_url()</property>
+    </object>
+  </object>
+
+</object>

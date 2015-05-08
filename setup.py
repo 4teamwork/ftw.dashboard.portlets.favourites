@@ -29,7 +29,7 @@ setup(name='ftw.dashboard.portlets.favourites',
         ],
 
       keywords='ftw dashboard portlet favourites favorites',
-      author='4teamwork GmbH',
+      author='4teamwork AG',
       author_email='mailto:info@4teamwork.ch',
       url='https://github.com/4teamwork/ftw.dashboard.portlets.favourites',
       license='GPL2',

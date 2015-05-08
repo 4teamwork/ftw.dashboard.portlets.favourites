@@ -39,7 +39,3 @@ Copyright
 This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
 
 ``ftw.dashboard.portlets.favourites`` is licensed under GNU General Public License, version 2.
-
-.. image:: https://cruel-carlota.pagodabox.com/14eebb9211c023fe71ce1e944bf90360
-   :alt: githalytics.com
-   :target: http://githalytics.com/4teamwork/ftw.dashboard.portlets.favourites

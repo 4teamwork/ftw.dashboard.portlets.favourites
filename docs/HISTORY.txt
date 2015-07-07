@@ -3,7 +3,7 @@ Changelog
 
 
 
-3.3.1 (unreleased)
+3.4.0 (2015-07-07)
 ------------------
 
 - Made Add to Favourites action CSRF safe.

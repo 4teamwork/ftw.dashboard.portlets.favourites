@@ -1,6 +1,8 @@
 from Products.CMFCore.utils import getToolByName
-from zope.component import getUtility
+from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+from zope.interface import implements
 
 
 class NoHomeFolderError(Exception):
@@ -16,13 +18,14 @@ class RegistryKeyError(Exception):
 class DefaultFavouritesHandler(object):
     """ Provides functions to add, remove or reorder favourites
     """
+    implements(IFavouritesHandler)
 
     def __init__(self, context, request):
         self.context = context
         self.request = request
         self.addable_types = ['Link']
 
-    def create_favourites_folder(self):
+    def create_favourites_container(self):
         """ Create the favourites folder
         """
         home_folder = self.get_home_folder()
@@ -42,7 +45,7 @@ class DefaultFavouritesHandler(object):
     def add_favourite(self, fav_id, title, remote_url):
         """ Add favourite to the favourites folder
         """
-        folder = self.get_favourites_folder()
+        folder = self.get_favourites_container()
         folder.invokeFactory('Link', id=fav_id)
         favourite = folder.get(fav_id)
 
@@ -54,7 +57,7 @@ class DefaultFavouritesHandler(object):
     def remove_favourite(self, fav_id):
         """ Remove favourite from th favourites folder
         """
-        folder = self.get_favourites_folder()
+        folder = self.get_favourites_container()
 
         try:
             folder.manage_delObjects(fav_id)
@@ -67,7 +70,7 @@ class DefaultFavouritesHandler(object):
     def rename_favourite(self, fav_id, title):
         """ Rename a favourite
         """
-        folder = self.get_favourites_folder()
+        folder = self.get_favourites_container()
         favourite = folder.get(fav_id)
         if favourite:
             favourite.setTitle(title)
@@ -78,7 +81,7 @@ class DefaultFavouritesHandler(object):
     def order_favourites(self, fav_ids=[]):
         """ Reorder the favourites in the given order of fav_ids
         """
-        folder = self.get_favourites_folder()
+        folder = self.get_favourites_container()
 
         for i, fav_id in enumerate(fav_ids):
             obj = folder.get(fav_id, '')
@@ -89,21 +92,21 @@ class DefaultFavouritesHandler(object):
             folder.moveObject(fav_id, i)
             obj.reindexObject(idxs=['getObjPositionInParent'])
 
-    def get_favourites_folder(self):
+    def get_favourites_container(self):
         """ Returns the folder the favourites are stored in
         """
         home_folder = self.get_home_folder()
         folder_name = self.get_favourite_folder_name()
 
         if not home_folder.get(folder_name):
-            self.create_favourites_folder()
+            self.create_favourites_container()
 
         return home_folder.get(folder_name)
 
     def get_favourites(self):
         """Return all favourites
         """
-        folder = self.get_favourites_folder()
+        folder = self.get_favourites_container()
         catalog = getToolByName(folder, 'portal_catalog')
         brains = catalog(self.get_favourites_filter_query())
 
@@ -112,7 +115,7 @@ class DefaultFavouritesHandler(object):
     def get_favourites_filter_query(self):
         """Returns a catalog query to get favourites
         """
-        folder = self.get_favourites_folder()
+        folder = self.get_favourites_container()
         query = {
             'path': {'query': '/'.join(folder.getPhysicalPath())},
             'portal_type': self.addable_types,
@@ -145,3 +148,34 @@ class DefaultFavouritesHandler(object):
                 "Can't access home folder. " \
                 "Please make sure you're owner of a homefolder")
         return home_folder
+
+
+class AnnotationStorageFavouritesHandler(object):
+    """ Annotation storage handler
+    """
+    implements(IFavouritesHandler)
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def create_favourites_container(self):
+        pass
+
+    def add_favourite(self, fav_id, title, remote_url):
+        pass
+
+    def remove_favourite(self, fav_id):
+        pass
+
+    def rename_favourite(self, fav_id, title):
+        pass
+
+    def order_favourites(self, fav_ids=[]):
+        pass
+
+    def get_favourites_container(self):
+        pass
+
+    def get_favourites(self):
+        pass

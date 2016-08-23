@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+
+    <layer name="ftw.dashboard.portlets.favourites.annotationstorage"
+           interface="ftw.dashboard.portlets.favourites.interfaces.IFavouritesAnnotationStorageLayer" />
+
+</layers>

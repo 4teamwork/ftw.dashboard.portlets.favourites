@@ -17,7 +17,11 @@
     <adapter
       for="* *"
       factory=".adapter.DefaultFavouritesHandler"
-      provides=".interfaces.IFavouritesHandler"
+     />
+
+     <adapter
+      for="* ftw.dashboard.portlets.favourites.interfaces.IFavouritesAnnotationStorageLayer"
+      factory=".adapter.AnnotationStorageFavouritesHandler"
      />
 
     <!-- Register the installation GenericSetup extension profile -->
@@ -25,6 +29,14 @@
       name="default"
       title="ftw.dashboard.portlets.favourites"
       directory="profiles/default"
+      description="ftw dashboard portlets favourites"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+    <genericsetup:registerProfile
+      name="annotationstorage"
+      title="ftw.dashboard.portlets.favourites with annotationstorage"
+      directory="profiles/annotationstorage"
       description="ftw dashboard portlets favourites"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />

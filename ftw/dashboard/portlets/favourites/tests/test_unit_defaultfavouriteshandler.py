@@ -24,7 +24,7 @@ class RemoveFavourite(MockTestCase):
 
         self.handler = self.mocker.patch(
             DefaultFavouritesHandler(self.context, self.request))
-        self.expect(self.handler.get_favourites_folder()).result(self.folder)
+        self.expect(self.handler.get_favourites_container()).result(self.folder)
 
     def test_valid_id(self):
 
@@ -70,7 +70,7 @@ class OrderFavourites(MockTestCase):
 
         self.handler = self.mocker.patch(
             DefaultFavouritesHandler(self.context, self.request))
-        self.expect(self.handler.get_favourites_folder()).result(self.folder)
+        self.expect(self.handler.get_favourites_container()).result(self.folder)
 
     def test_all_valid(self):
 

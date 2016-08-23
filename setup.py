@@ -7,6 +7,8 @@ mainainter = 'Philipp Gross'
 tests_require = [
     'plone.app.testing',
     'ftw.testing',
+    'ftw.builder',
+    'ftw.testbrowser',
     ]
 
 setup(name='ftw.dashboard.portlets.favourites',

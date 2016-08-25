@@ -14,13 +14,11 @@
             <tal:items tal:repeat="item items">
 
                 <dd tal:define="oddrow repeat/item/odd;"
-                    tal:attributes="class python:oddrow and  'favourite-item even' or 'favourite-item odd';
-                                    id string:${item/id}">
+                    tal:attributes="class python:oddrow and  'favourite-item even' or 'favourite-item odd'; id string:${item/id}">
                     <span class="title">
                         <a href=""
-                           tal:attributes="href python: item.getRemoteUrl.replace('resolveUid', 'resolveuid');
-                                           title item/Title;">
-                            <tal:title content="item/Title" />
+                           tal:attributes="href item/url; title item/title;">
+                            <tal:title content="item/title" />
                         </a>
                     </span>
                 </dd>

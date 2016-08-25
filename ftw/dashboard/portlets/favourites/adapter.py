@@ -109,8 +109,15 @@ class DefaultFavouritesHandler(object):
         folder = self.get_favourites_container()
         catalog = getToolByName(folder, 'portal_catalog')
         brains = catalog(self.get_favourites_filter_query())
+        result = []
 
-        return brains
+        for brain in brains:
+            result.append({'id': brain.id,
+                           'title': brain.Title,
+                           'url': brain.getRemoteUrl.replace('resolveUid',
+                                                             'resolveuid')})
+
+        return result
 
     def get_favourites_filter_query(self):
         """Returns a catalog query to get favourites

@@ -35,7 +35,7 @@
 
     <genericsetup:registerProfile
       name="annotationstorage"
-      title="ftw.dashboard.portlets.favourites with annotationstorage"
+      title="ftw.dashboard.portlets.favourites using annotationstorage"
       directory="profiles/annotationstorage"
       description="ftw dashboard portlets favourites"
       provides="Products.GenericSetup.interfaces.EXTENSION"

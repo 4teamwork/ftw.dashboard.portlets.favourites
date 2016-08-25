@@ -45,6 +45,7 @@ setup(name='ftw.dashboard.portlets.favourites',
         'setuptools',
         'ftw.dashboard.dragndrop',
         'ftw.upgrade',
+        'plone.api'
         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),

@@ -1,8 +1,16 @@
+from BTrees.OOBTree import OOBTree
 from Products.CMFCore.utils import getToolByName
 from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
+from persistent.dict import PersistentDict
+from persistent.list import PersistentList
+from plone import api
 from plone.registry.interfaces import IRegistry
+from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility
 from zope.interface import implements
+
+
+ANNOTATION_KEY = "ftw.dashboard.portlets.favourites:favourites"
 
 
 class NoHomeFolderError(Exception):
@@ -165,24 +173,51 @@ class AnnotationStorageFavouritesHandler(object):
     def __init__(self, context, request):
         self.context = context
         self.request = request
+        self.userid = api.user.get_current().id
+
+    @property
+    def storage(self):
+        if getattr(self, '_storage', None) is None:
+            annotation = IAnnotations(api.portal.get())
+            if ANNOTATION_KEY not in annotation:
+                annotation[ANNOTATION_KEY] = OOBTree()
+            self._storage = annotation[ANNOTATION_KEY]
+
+        return self._storage
 
     def create_favourites_container(self):
-        pass
+        self.storage.insert(self.userid, PersistentDict())
 
     def add_favourite(self, fav_id, title, remote_url):
-        pass
+        self.get_favourites_container()[fav_id] = PersistentDict(
+            url=remote_url, title=title, pos=-1)
 
     def remove_favourite(self, fav_id):
-        pass
+        del self.get_favourites_container()[fav_id]
 
     def rename_favourite(self, fav_id, title):
-        pass
+        self.get_favourites_container()[fav_id]['title'] = title
 
     def order_favourites(self, fav_ids=[]):
-        pass
+        for i, fav_id in enumerate(fav_ids):
+            if not fav_id:
+                continue
+
+            self.get_favourites_container()[fav_id]['pos'] = i
 
     def get_favourites_container(self):
-        pass
+        if not self.storage.get(self.userid):
+            self.create_favourites_container()
+        return self.storage.get(self.userid)
 
     def get_favourites(self):
-        pass
+        container = self.get_favourites_container()
+        result = []
+
+        for key, value in sorted(container.iteritems(),
+                                 key=lambda item: item[1].get('pos')):
+            result.append({'id': key,
+                           'title': value.get('title'),
+                           'url': value.get('url')})
+
+        return result

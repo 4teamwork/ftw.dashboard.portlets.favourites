@@ -6,7 +6,10 @@ Changelog
 3.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add option to use the annotation storage profile.
+  When using this profile, the site doesn't need to
+  have user folders anymore.
+  [raphael-s]
 
 
 3.4.0 (2015-07-07)

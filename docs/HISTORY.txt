@@ -3,7 +3,7 @@ Changelog
 
 
 
-3.4.1 (unreleased)
+3.5.0 (2016-09-16)
 ------------------
 
 - Add option to use the annotation storage profile.

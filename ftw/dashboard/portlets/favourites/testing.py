@@ -1,13 +1,17 @@
+from ftw.builder.testing import BUILDER_LAYER
+from ftw.builder.testing import functional_session_factory
+from ftw.builder.testing import set_builder_session_factory
 from plone.app.testing import applyProfile
+from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
-from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import PLONE_FIXTURE
-from plone.testing.z2 import installProduct
-from zope.configuration import xmlconfig
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.testing import Layer
 from plone.testing import zca
+from plone.testing.z2 import installProduct
+from zope.configuration import xmlconfig
 
 
 class FavouritesZCMLLayer(Layer):
@@ -30,7 +34,7 @@ FAVOURITES_ZCML_LAYER = FavouritesZCMLLayer()
 
 class FavouritesPloneLayer(PloneSandboxLayer):
 
-    defaultBases = (PLONE_FIXTURE, )
+    defaultBases = (PLONE_FIXTURE, BUILDER_LAYER)
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
@@ -54,5 +58,21 @@ class FavouritesPloneLayer(PloneSandboxLayer):
 
 FavouritesPloneFixture = FavouritesPloneLayer()
 FAVOURITES_PLONE_LAYER = IntegrationTesting(
-    bases=(FavouritesPloneFixture, ),
+    bases=(
+        FavouritesPloneFixture,
+        set_builder_session_factory(functional_session_factory)),
     name="ftw.dashboard.portlets.favourites:Integration")
+
+
+class FavouritesAnnotationStorageLayer(FavouritesPloneLayer):
+
+    def setUpPloneSite(self, portal):
+        super(FavouritesAnnotationStorageLayer, self).setUpPloneSite(portal)
+        applyProfile(portal, 'ftw.dashboard.portlets.favourites:annotationstorage')
+
+FavouritesAnnotationStorageFixture = FavouritesAnnotationStorageLayer()
+FAVOURITES_ANNOTATION_STORAGE_LAYER = FunctionalTesting(
+    bases=(
+        FavouritesAnnotationStorageFixture,
+        set_builder_session_factory(functional_session_factory)),
+    name="ftw.dashboard.portlets.favourites:functional annotationstorage")

@@ -1,12 +1,13 @@
+import json
+import time
+
+from Products.CMFCore.utils import getToolByName
+from Products.Five.browser import BrowserView
 from ftw.dashboard.portlets.favourites import favouriteMessageFactory as _
 from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from plone.i18n.normalizer.interfaces import IIDNormalizer
-from Products.CMFCore.utils import getToolByName
-from Products.Five.browser import BrowserView
 from zope.component import getMultiAdapter
 from zope.component import getUtility
-import json
-import time
 
 
 # Try to get the plone.protect's createToken method, because it's only

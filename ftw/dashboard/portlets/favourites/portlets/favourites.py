@@ -45,7 +45,7 @@ class Renderer(base.Renderer):
 
     def items(self):
         handler = getMultiAdapter((self.context, self.request),
-            IFavouritesHandler)
+                                  IFavouritesHandler)
 
         return handler.get_favourites()
 

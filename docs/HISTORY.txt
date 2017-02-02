@@ -6,7 +6,7 @@ Changelog
 3.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Drop Plone 4.1 support. [jone]
 
 
 3.5.0 (2016-09-16)

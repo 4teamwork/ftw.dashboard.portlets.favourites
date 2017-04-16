@@ -83,6 +83,9 @@ Changelog
 3.0 (2013-01-25)
 ----------------
 
+- Added a description to addtofavorites action, so there is a tooltip.
+  [Julian Infanger]
+
 - Full refactored. Favourites full configurable over the portlet.
   [eschmutz]
 

@@ -16,25 +16,22 @@ jQuery(function($) {
 
 
   var makeFavouritesEditable = function($element) {
-    if ($('.documentEditable').length !== 0) {
-      if ($element) {
-        if (!$element.hasClass('portletItemEmpty')) {
-          $element.append(removeFavouriteElement);
-          $element.append(editFavouriteElement);
-          $element.append(submitFavouriteElement);
-        }
-      } else {
-        $('.draggable-favourites').each(function() {
-          $(this).children('.favourite-item').each(function() {
-            if (!$(this).hasClass('portletItemEmpty')) {
-              $(this).append(removeFavouriteElement);
-              $(this).append(editFavouriteElement);
-              $(this).append(submitFavouriteElement);
-            }
-          });
-        });
+    if ($element) {
+      if (!$element.hasClass('portletItemEmpty')) {
+        $element.append(removeFavouriteElement);
+        $element.append(editFavouriteElement);
+        $element.append(submitFavouriteElement);
       }
-
+    } else {
+      $('.draggable-favourites').each(function() {
+        $(this).children('.favourite-item').each(function() {
+          if (!$(this).hasClass('portletItemEmpty')) {
+            $(this).append(removeFavouriteElement);
+            $(this).append(editFavouriteElement);
+            $(this).append(submitFavouriteElement);
+          }
+        });
+      });
     }
 
     $('.favouriteRemove').click(function(e) {

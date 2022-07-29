@@ -1,0 +1,1 @@
+require(['favourite',], function (favourite) {});

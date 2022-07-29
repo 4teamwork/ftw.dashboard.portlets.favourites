@@ -81,7 +81,7 @@ class AddFavourite(BrowserView):
 
         handler.add_favourite(
             fav_id,
-            self.context.TitleOrId(),
+            self.context.title_or_id(),
             self.context.portal_url.getRelativeUrl(self.context),
             )
 

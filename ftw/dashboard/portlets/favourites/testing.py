@@ -48,6 +48,7 @@ class FavouritesPloneLayer(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
         applyProfile(portal, 'ftw.dashboard.portlets.favourites:default')
+        applyProfile(portal, 'plone.app.contenttypes:default')
 
         setRoles(portal, TEST_USER_ID, ['Manager'])
 

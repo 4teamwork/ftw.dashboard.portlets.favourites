@@ -9,6 +9,8 @@ tests_require = [
     'ftw.testing',
     'ftw.builder',
     'ftw.testbrowser',
+    'plone.app.contenttypes',
+    'mocker',
     ]
 
 setup(name='ftw.dashboard.portlets.favourites',
@@ -21,11 +23,11 @@ setup(name='ftw.dashboard.portlets.favourites',
       # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
-        'Framework :: Plone :: 4.2',
+        'Framework :: Plone :: 5.1',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
         'Topic :: Software Development :: Libraries :: Python Modules',
         ],
 
@@ -42,7 +44,7 @@ setup(name='ftw.dashboard.portlets.favourites',
 
       install_requires=[
         'setuptools',
-        'ftw.dashboard.dragndrop',
+        'ftw.dashboard.dragndrop>=2',
         'ftw.upgrade',
         'plone.api'
         ],

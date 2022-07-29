@@ -1,7 +1,7 @@
 from ftw.dashboard.portlets.favourites.adapter import AnnotationStorageFavouritesHandler
 from ftw.dashboard.portlets.favourites.adapter import DefaultFavouritesHandler
 from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
-from unittest2 import TestCase
+from unittest import TestCase
 from zope.interface.verify import verifyClass
 
 

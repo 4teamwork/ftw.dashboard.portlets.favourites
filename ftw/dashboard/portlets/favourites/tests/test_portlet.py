@@ -7,7 +7,7 @@ from plone.portlets.interfaces import IPortletDataProvider
 from plone.portlets.interfaces import IPortletManager
 from plone.portlets.interfaces import IPortletRenderer
 from plone.portlets.interfaces import IPortletType
-from unittest2 import TestCase
+from unittest import TestCase
 from zope.component import getUtility, getMultiAdapter
 
 

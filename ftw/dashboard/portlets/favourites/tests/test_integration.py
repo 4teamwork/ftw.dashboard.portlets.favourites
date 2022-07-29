@@ -1,8 +1,7 @@
-# coding=UTF-8
 from ftw.dashboard.portlets.favourites.adapter import DefaultFavouritesHandler
 from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from ftw.dashboard.portlets.favourites.testing import FAVOURITES_PLONE_LAYER
-from unittest2 import TestCase
+from unittest import TestCase
 from zope.component import getMultiAdapter
 
 
@@ -41,7 +40,7 @@ class FavouriteTests(TestCase):
 
         self.assertTrue(len(content) == 2)
         self.assertEquals('Test Folder', content[1].title)
-        self.assertEquals('test_folder', content[1].remote_url())
+        self.assertEquals('test_folder', content[1].remoteUrl)
 
         # Ordering
         links = [link.id for link in content]

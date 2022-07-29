@@ -1,5 +1,5 @@
+from unittest import TestCase
 import json
-from unittest2 import TestCase
 
 from ftw.dashboard.portlets.favourites.testing import FAVOURITES_PLONE_LAYER
 

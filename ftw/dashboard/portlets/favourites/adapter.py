@@ -1,10 +1,10 @@
 from BTrees.OOBTree import OOBTree
-from Products.CMFCore.utils import getToolByName
 from ftw.dashboard.portlets.favourites.interfaces import IFavouritesHandler
 from persistent.dict import PersistentDict
-from persistent.list import PersistentList
 from plone import api
 from plone.registry.interfaces import IRegistry
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility
 from zope.interface import implements
@@ -44,7 +44,7 @@ class DefaultFavouritesHandler(object):
             id=foldername,
             title=foldername)
 
-        folder = home_folder.get(foldername)
+        folder = ISelectableConstrainTypes(home_folder.get(foldername))
 
         folder.setConstrainTypesMode(1)
         folder.setImmediatelyAddableTypes(self.addable_types)
@@ -57,7 +57,7 @@ class DefaultFavouritesHandler(object):
         folder.invokeFactory('Link', id=fav_id)
         favourite = folder.get(fav_id)
 
-        favourite.setRemoteUrl(remote_url)
+        favourite.remoteUrl = remote_url
         favourite.setTitle(title)
         favourite.reindexObject()
         return favourite

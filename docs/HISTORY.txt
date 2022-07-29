@@ -6,6 +6,10 @@ Changelog
 3.5.1 (unreleased)
 ------------------
 
+- Add plone 5.x support [mathias.leimgruber]
+
+- Drop Plone 4.2 and 4.3 support as well. [mathias.leimgruber]
+
 - Drop Plone 4.1 support. [jone]
 
 

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<registry>
+    <record name="ftw.dashboard.portlets.favourites.foldername">
+        <field type="plone.registry.field.Text">
+            <title>Foldername</title>
+            <description>Define the name of the favourites-folder</description>
+            <value_type type="plone.registry.field.ASCIILine" />
+        </field>
+        <value>Favourites</value>
+    </record>
+    <records prefix="plone.bundles/ftw-dashboard-fav-resources" interface="Products.CMFPlone.interfaces.IBundleRegistry">
+        <value key="enabled">True</value>
+        <value key="depends"></value>
+        <value key="stub_js_modules">jquery</value>
+        <value key="compile">False</value>
+        <value key="jscompilation">++resource++ftw.dashboard.portlets.favourites.resources/dashboard-fav-compiled.js</value>
+        <value key="csscompilation">++resource++ftw.dashboard.portlets.favourites.resources/dashboard-fav-compiled.css</value>
+        <value key="last_compilation">2022-07-27 14:00:00</value>
+        <value key="merge_with">default</value>
+    </records>
+</registry>

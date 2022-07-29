@@ -1,5 +1,6 @@
 jQuery(function($) {
 
+  var portal_url = $('body').attr('data-portal-url');
   var authenticator_token = $('.portlet.favourite-listing').data('authenticator-token');
   var favouriteId;
   var $titleInputField;
